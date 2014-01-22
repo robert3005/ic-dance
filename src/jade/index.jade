@@ -1,0 +1,163 @@
+doctype 5
+html.no-js
+    head
+        title Imperial College Dance Society
+        meta(charset="utf-8")
+        meta(name="description", content="")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        link(rel="stylesheet", href="/vendor/css/bootstrap.css")
+        link(rel="stylesheet", href="/vendor/css/font-awesome.css")
+        link(rel="stylesheet", href="/vendor/css/fullcalendar.css")
+        link(rel="stylesheet", media="print", href="/vendor/css/fullcalendar.print.css")
+        link(rel="stylesheet", href="/css/main.css")
+        script(src="/vendor/js/modernizr-2.7.1.js")
+    body(data-spy="scroll", data-target=".navbar-fixed-top")
+        header.navbar.navbar-inverse.navbar-fixed-top.top-navbar(role="banner")
+            .container
+                .navbar-header
+                    button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-collapse")
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href="../") IC Dance Club
+                nav.collapse.navbar-collapse(role="navigation")
+                    ul.nav.navbar-nav
+                        li
+                            a(href="#classes") Classes
+                        li
+                            a(href="#join") How To Join
+                        li
+                            a(href="#timetable") Timetable
+                        li
+                            a(href="#icdt") ICDT
+                        li
+                            a(href="#teachers") Teachers
+                        li
+                            a(href="#about") About
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href="#contact") Contact
+        .picture
+            .container
+                h1 Imperial College Dance Club
+        .icons
+            .container
+                .row
+                    .col-lg-4
+                        img.img-circle(src="/img/icon_9109.svg", style="width: 140px; height: 140px;")
+                        h2 Learn to dance
+                        p.
+                            We offer 18 hours of classes competitive and casual at all levels as well as salsa.
+                        a.btn.btn-default(href="#classes", role="button") Learn More »
+                    .col-lg-4
+                        img.img-circle(src="/img/icon_20147.svg", style="width: 140px; height: 140px;")
+                        h2 Compete
+                        p.
+                            There's a lot of university dance competitions in a year. We usually attend 4 in any year.
+                        a.btn.btn-default(href="#icdt", role="button") Learn More »
+                    .col-lg-4
+                        img.img-circle(src="/img/icon_23939.svg", style="width: 140px; height: 140px;")
+                        h2 Meet new people
+                        p.
+                            With over 200 members you won't find as diverse group of people in any other club or society.
+                        a.btn.btn-default(href="#about", role="button") Learn More »
+
+        .container
+            .row#classes
+                .col-md-12.col-lg-12
+                    h1 Classes
+                    h2 Casual Ballroom (Medal Classes)
+                    h2 Salsa
+                    h2 Techqniue
+                    h2 Beginners Team
+                    h2 Team
+            .row#join
+                .col-md-12.col-lg-12x
+                    h1 How To Join
+            .row#timetable
+                .col-md-12.col-lg-12
+                    h1 Timetable
+                    #timetable-calendar
+                    h2 Room Locations
+                    h2 Room Policy
+            .row#icdt
+                .col-md-12.col-lg-12x
+                    h1 Imperial College Dance Team
+                    h2 Pratices
+                    h2 Competitions
+                    h2 Dancewear
+            .row#teachers
+                .col-md-12.col-lg-12
+                    h1 Teachers
+            .row#about
+                .col-md-12.col-lg-12
+                    h1 About
+
+        footer#contact
+            .container
+                .row
+                    .col-md-6.col-lg-6
+                        h1 Contact
+                        p.lead Where you can find us
+                        .media
+                            span.pull-left
+                                i.fa.fa-map-marker
+                            .media-body
+                                address
+                                    strong Imperial College London
+                                    br
+                                    | South Kensington Campus, Exhibition Road
+                                    br
+                                    | London, SW7 2AZ
+                        p.lead Send us an email
+                        p
+                            a.btn.btn-default(href="mailto:dance@imperial.ac.uk")
+                                i.fa.fa-envelope
+                                span dance@imperial.ac.uk
+                        p.lead Competitive dancers
+                        p
+                            a.btn.btn-default(href="mailto:imperialcaptains@gmail.com")
+                                i.fa.fa-envelope
+                                span imperialcaptains@gmail.com
+                        p.lead Subscribe to mailing list
+                        p
+                            a.btn.btn-default(href="mailto:icu-dance-subscribe@imperial.ac.uk", data-toggle="tooltip", title="Just send empty email to this address")
+                                i.fa.fa-envelope
+                                span Mailing list
+                        p.lead Check out our facebook groups for more information
+                        p
+                            a.btn.btn-default(href="https://www.facebook.com/groups/168466220024235/")
+                                i.fa.fa-facebook
+                                span Club
+                            a.btn.btn-default(href="https://www.facebook.com/groups/380313055382684/")
+                                i.fa.fa-facebook
+                                span Salsa
+                            a.btn.btn-default(href="https://www.facebook.com/groups/1413995095484291/")
+                                i.fa.fa-facebook
+                                span Beginners Team
+                            a.btn.btn-default(href="https://www.facebook.com/groups/588363304553222/")
+                                i.fa.fa-facebook
+                                span Team
+                    .col-md-6.col-lg-6.location-pic
+                        img(src="/img/location.jpg", alt="location on a map", class="img-circle")
+
+
+        script(src="//code.jquery.com/jquery-2.0.3.min.js")
+        script.
+            window.jQuery || document.write('<script src="/vendor/js/jquery-2.0.3.min.js"><\/script>')
+        script(src="/vendor/js/react-0.8.0.js")
+        script(src="/vendor/js/lodash.js")
+        script(src="/vendor/js/bootstrap.js")
+        script(src="/vendor/js/fullcalendar.js")
+        script(src="/vendor/js/gcal.js")
+        script(src="/vendor/js/plugins.js")
+        script(src="/js/calendar.js")
+        script(src="/js/main.js")
+
+        script.
+            var _gaq=[['_setAccount','UA-38468588-1'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));

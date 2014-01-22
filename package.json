@@ -1,0 +1,30 @@
+{
+  "name": "ic-dance",
+  "version": "0.0.1",
+  "description": "",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-bg-shell": "~2.0.2",
+    "grunt-contrib-jade": "~0.7.0",
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-stylus": "~0.5.1",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-coffeelint": "0.0.6",
+    "react-tools": "~0.8.0",
+    "grunt-react": "~0.6.0",
+    "matchdep": "~0.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/robert3005/ic-dance.git"
+  },
+  "author": "Robert Kruszewski",
+  "bugs": {
+    "url": "https://github.com/robert3005/ic-dance/issues"
+  }
+}

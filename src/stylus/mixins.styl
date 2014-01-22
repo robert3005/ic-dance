@@ -1,0 +1,40 @@
+btn(colour)
+    color #fff
+    background-color colour
+    border-color darken(colour, 20%)
+
+    &:hover
+    &:focus
+    &:active
+    &.active
+    .open .dropdown-toggle&
+        color #fff
+        background-color darken(colour, 20%)
+        border-color darken(colour, 40%)
+
+    &:active,
+    &.active,
+    .open .dropdown-toggle&
+        background-image none
+
+    &.disabled
+    &[disabled]
+    fieldset[disabled] &
+    &.disabled:hover
+    &[disabled]:hover
+    fieldset[disabled] &:hover
+    &.disabled:focus
+    &[disabled]:focus
+    fieldset[disabled] &:focus
+    &.disabled:active
+    &[disabled]:active
+    fieldset[disabled] &:active
+    &.disabled.active
+    &[disabled].active
+    fieldset[disabled] &.active
+        background-color colour
+        border-color darken(colour, 20%)
+
+    .badge
+        color colour
+        background-color #fff
