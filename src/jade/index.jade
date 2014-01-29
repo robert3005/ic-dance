@@ -141,8 +141,7 @@ html.no-js
                                 i.fa.fa-facebook
                                 span Team
                     .col-md-6.col-lg-6.location-pic
-                        img(src="/img/location.jpg", alt="location on a map", class="img-circle")
-
+                        #map.thumbnail
 
         script(src="//code.jquery.com/jquery-2.0.3.min.js")
         script.
@@ -154,8 +153,9 @@ html.no-js
         script(src="/vendor/js/gcal.js")
         script(src="/vendor/js/plugins.js")
         script(src="/js/calendar.js")
+        script(src="https://maps.googleapis.com/maps/api/js?sensor=false")
+        script(src="/js/map.js")
         script(src="/js/main.js")
-
         script.
             var _gaq=[['_setAccount','UA-38468588-1'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
