@@ -4,7 +4,7 @@
   "description": "",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.4.4",
+    "grunt-contrib-watch": "~0.5.3",
     "grunt-bg-shell": "~2.0.2",
     "grunt-contrib-jade": "~0.7.0",
     "grunt-contrib-clean": "~0.4.1",
@@ -14,7 +14,9 @@
     "grunt-coffeelint": "0.0.6",
     "react-tools": "~0.8.0",
     "grunt-react": "~0.6.0",
-    "matchdep": "~0.3.0"
+    "matchdep": "~0.3.0",
+    "browserify": "^3.38.0",
+    "grunt-browserify": "^2.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

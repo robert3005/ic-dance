@@ -62,11 +62,9 @@ Map = React.createClass
         center: new google.maps.LatLng(51.4989207, -.1769148)
         zoom: 15
         mapTypeId: google.maps.MapTypeId.ROADMAP
-        scrollwheel: false
         navigationControl: true
         mapTypeControl: false
         scaleControl: false
-        draggable: false
         styles: styles
 
     contentString: """

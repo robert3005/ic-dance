@@ -1,10 +1,10 @@
 $ ->
     timetable = document.getElementById "timetable-calendar"
     React.renderComponent Calendar(), timetable
-    map = document.getElementById "map"
 
-    google.maps.event.addDomListener window, 'load', ->
+    map = document.getElementById "map"
+    google.maps.event.addDomListener window, "load", ->
         React.renderComponent Map(), map
 
-    $('footer a').tooltip
+    $("footer a").tooltip
         placement: "right"

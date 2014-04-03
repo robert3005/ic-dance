@@ -51,7 +51,7 @@ body
     padding 40px 0
 
 .picture
-    background url(../img/8386981186_e84e30625a_o.jpg) no-repeat center center
+    background url("/img/8386981186_e84e30625a_o.jpg") no-repeat center center
     -webkit-background-size cover
     -moz-background-size cover
     -o-background-size cover
@@ -78,10 +78,44 @@ body
         background rgba(0,0,0,0.7)
 
     h1
-        color #ffffff
+        color #fbf3ea
         font-family nauertregular
-        font-size 120px
+        font-size 200px
+        line-height 0.8
         border none
+
+    h2
+        &:before
+            content ""
+            background-image url("/img/title-deco-left.png")
+            background-repeat no-repeat
+            width 150px
+            height 54px
+            margin-top 10px
+            margin-right 15px
+            display inline-block
+            background-size cover
+            vertical-align top
+
+        &:after
+            content ""
+            background-image url("/img/title-deco-right.png")
+            background-repeat no-repeat
+            width 150px
+            height 54px
+            margin-top 10px
+            margin-left 15px
+            display inline-block
+            background-size cover
+            vertical-align top
+
+        color #fbf3ea
+        font-family nauertregular
+        font-size 90px
+        border none
+
+.push-down
+    margin-top 23px
 
 .timetable
     .btn-group
@@ -180,9 +214,15 @@ footer
         i
             font-size 38px
 
+.action-button
+    width 50%
+    margin-right auto
+    margin-left auto
+    margin-top 20px
+
 #map
     width 100%
-    height 512px
+    height 518px
 
     & > div
         width 100%
@@ -191,3 +231,13 @@ footer
 .infoWindow
     color #000000
     text-align left
+
+.ballroom-icon
+    margin 20px
+
+.latin-icon
+    margin 35px 20px 30px
+
+.separator
+    border-top 1px solid #eeeeee
+    margin-top 20px
