@@ -8,3 +8,7 @@ $ ->
 
     $("footer a").tooltip
         placement: "right"
+
+    $("#faq").masonry
+        itemSelector: ".item"
+        gutter: 10
