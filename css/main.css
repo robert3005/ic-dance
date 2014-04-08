@@ -1,0 +1,67 @@
+@font-face{font-family:'nauertregular';src:url("../fonts/nauertregular-webfont.eot");src:url("../fonts/nauertregular-webfont.eot?#iefix") format('embedded-opentype'),url("../fonts/nauertregular-webfont.woff") format('woff'),url("../fonts/nauertregular-webfont.ttf") format('truetype'),url("../fonts/nauertregular-webfont.svg#nauertregular") format('svg');font-weight:normal;font-style:normal}
+.btn-primary{color:#fff;background-color:#7ed0d6;border-color:#4abdc6;}
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{color:#fff;background-color:#4abdc6;border-color:#31949b}
+.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary{background-image:none}
+.btn-primary.disabled,.btn-primary[disabled],fieldset[disabled] .btn-primary,.btn-primary.disabled:hover,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary:hover,.btn-primary.disabled:focus,.btn-primary[disabled]:focus,fieldset[disabled] .btn-primary:focus,.btn-primary.disabled:active,.btn-primary[disabled]:active,fieldset[disabled] .btn-primary:active,.btn-primary.disabled.active,.btn-primary[disabled].active,fieldset[disabled] .btn-primary.active{background-color:#7ed0d6;border-color:#4abdc6}
+.btn-primary .badge{color:#7ed0d6;background-color:#fff}
+.btn-default{color:#fff;background-color:#87d69b;border-color:#53c470;}
+.btn-default:hover,.btn-default:focus,.btn-default:active,.btn-default.active,.open .dropdown-toggle.btn-default{color:#fff;background-color:#53c470;border-color:#359c4f}
+.btn-default:active,.btn-default.active,.open .dropdown-toggle.btn-default{background-image:none}
+.btn-default.disabled,.btn-default[disabled],fieldset[disabled] .btn-default,.btn-default.disabled:hover,.btn-default[disabled]:hover,fieldset[disabled] .btn-default:hover,.btn-default.disabled:focus,.btn-default[disabled]:focus,fieldset[disabled] .btn-default:focus,.btn-default.disabled:active,.btn-default[disabled]:active,fieldset[disabled] .btn-default:active,.btn-default.disabled.active,.btn-default[disabled].active,fieldset[disabled] .btn-default.active{background-color:#87d69b;border-color:#53c470}
+.btn-default .badge{color:#87d69b;background-color:#fff}
+body{padding-top:50px}
+.navbar{text-shadow:0 -1px 0 rgba(0,0,0,0.15);background-color:#4e9689;border-color:#376960;box-shadow:0 1px 0 rgba(255,255,255,0.1);}
+.navbar .navbar-collapse{border-color:#376960}
+.navbar.navbar-inverse .navbar-toggle{border-color:#2f5a52;}
+.navbar.navbar-inverse .navbar-toggle:hover,.navbar.navbar-inverse .navbar-toggle:focus{border-color:#2f5a52;background-color:#2f5a52}
+.navbar .navbar-nav > .disabled > a,.navbar .navbar-nav > .disabled > a:hover,.navbar .navbar-nav > .disabled > a:focus{color:#444;background-color:transparent}
+.navbar .navbar-nav > .active > a,.navbar .navbar-nav > .active > a:hover,.navbar .navbar-nav > .active > a:focus{background-color:#376960}
+.navbar .navbar-nav > li > a{color:#e3f1ee;}
+.navbar .navbar-nav > li > a:hover{color:#fff}
+.navbar .navbar-brand{color:#fff}
+.icons{text-align:center;background-color:#f4fce8;padding:40px 0}
+.picture{background:url("/img/8386981186_e84e30625a_o.jpg") no-repeat center center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;text-align:center;padding:60px 15px 150px;position:relative;box-shadow:inset 0 0 120px rgba(0,0,0,0.9);inset:0 0 80px rgba(0,0,0,0.83);}
+.picture .container{position:relative;z-index:15}
+.picture:after{content:'';top:0;left:0;z-index:10;width:100%;height:100%;display:block;position:absolute;background:rgba(0,0,0,0.7)}
+.picture h1{color:#fbf3ea;font-family:nauertregular;font-size:200px;line-height:.8;border:none}
+.picture h2{color:#fbf3ea;font-family:nauertregular;font-size:90px;border:none}
+.picture h2:before{content:"";background-image:url("/img/title-deco-left.png");background-repeat:no-repeat;width:150px;height:54px;margin-top:10px;margin-right:15px;display:inline-block;background-size:cover;vertical-align:top}
+.picture h2:after{content:"";background-image:url("/img/title-deco-right.png");background-repeat:no-repeat;width:150px;height:54px;margin-top:10px;margin-left:15px;display:inline-block;background-size:cover;vertical-align:top}
+.push-down{margin-top:20px}
+.dance-steps{margin:30px 5px 45px}
+.trophy{margin:30px 5px 15px}
+.winners-box{margin:73px 0 0}
+.item{width:373.33px;padding:10px 20px 20px;margin-bottom:10px;outline:medium none;background:none repeat scroll 0% 0% #fff;border-radius:2px 2px 2px 2px;box-shadow:0 2px 6px rgba(0,0,0,0.3),0 -3px 8px rgba(0,0,0,0.2);}
+.item p{color:#666}
+.item:hover{box-shadow:0 2px 6px rgba(0,0,0,0.75),0 -3px 8px rgba(0,0,0,0.5)}
+.timetable .btn-group{margin:30px 0 20px}
+.timetable .btn{text-transform:capitalize}
+.timetable .fc-event{color:#000}
+.timetable .fc-event-vert.fc-event-end{border-bottom-left-radius:0;border-bottom-right-radius:0}
+.timetable .fc-event-vert.fc-event-start{border-top-left-radius:0;border-top-right-radius:0}
+.timetable .rooms{background-color:#7bd148;border-color:#5fb42d}
+.timetable .technique{background-color:#c2c2c2;border-color:#9b9b9b}
+.timetable .casual_ballroom{background-color:#fad26b;border-color:#f8bd26}
+.timetable .salsa{background-color:#bea2ff;border-color:#844fff}
+.timetable .beginners_team{background-color:#f7a3be;border-color:#f05889}
+.timetable .team{background-color:#b58271;border-color:#9b6351}
+h1{border-bottom:1px solid #eee;padding-bottom:10px;margin:40px 0 20px}
+footer{border-style:solid;border-width:1px 0 0;border-color:#3eb65d;box-shadow:0 -1px 0 rgba(255,255,255,0.1);background-color:#87d69b;color:#fff;padding:20px 0 30px;margin-top:50px;}
+footer h1{margin:10px 0 15px;padding-bottom:5px}
+footer p.lead{margin-bottom:10px}
+footer p > a{line-height:20px;color:#edf9f0;}
+footer p > a:hover,footer p > a:focus{color:#fff}
+footer p > a > i{font-size:20px}
+footer p > a > span{vertical-align:top;margin:0 10px 0 6px}
+footer .btn{border-color:#fff;margin:0 6px;}
+footer .btn:first-child{margin-left:0}
+footer .btn:hover,footer .btn:focus,footer .btn:active,footer .btn.active,.open .dropdown-togglefooter .btn{border-color:#fff}
+footer .location-pic{text-align:center;margin-top:10px}
+footer .media i{font-size:38px}
+.action-button{width:50%;margin-right:auto;margin-left:auto;margin-top:20px}
+#map{width:100%;height:518px;}
+#map > div{width:100%;height:100%}
+.infoWindow{color:#000;text-align:left}
+.ballroom-icon{margin:20px}
+.latin-icon{margin:35px 20px 30px}
+.separator{border-top:1px solid #eee;margin-top:20px}
