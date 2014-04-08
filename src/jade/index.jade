@@ -24,20 +24,20 @@ html.no-js
                     a.navbar-brand(href="../") IC Dance Club
                 nav.collapse.navbar-collapse(role="navigation")
                     ul.nav.navbar-nav
-                        li(data-panel="#classes")
+                        li
                             a(href="#classes") Learn To Dance
-                        li(data-panel="#casual")
+                        li
                             a(href="#casual") Casual Ballroom
-                        li(data-panel="#salsa")
+                        li
                             a(href="#salsa") Salsa
-                        li(data-panel="#competitive")
+                        li
                             a(href="#competitive") Competitive Dancing
-                        li(data-panel="#howtojoin")
-                            a(href="#howtojoin") How To Join
-                        li(data-panel="#timetable")
+                        li
+                            a(href="#faq") FAQ
+                        li
                             a(href="#timetable") Timetable
-                        li(data-panel="#about")
-                            a(href="#about") About
+                        //- li
+                            //- a(href="#about") About
                     ul.nav.navbar-nav.navbar-right
                         li
                             a(href="#contact") Contact
@@ -65,10 +65,10 @@ html.no-js
                         h2 Have fun
                         p.
                             With over 200 members you won't find as diverse group of people in any other club or society.
-                        a.btn.btn-default(href="#about", role="button") Learn More »
+                        a.btn.btn-default(href="#faq", role="button") Learn More »
 
         .container
-            .row#classes(data-panel="#classes")
+            .row#classes
                 .col-md-12.col-lg-12
                     h1 Learn To Dance
                     .row
@@ -103,31 +103,35 @@ html.no-js
                             .well.action-button
                                 a.btn.btn-default.btn-lg.btn-block(href="#timetable") Timetable
 
-            .row#casual(data-panel="#casual")
+            .row#casual
                 .col-md-12.col-lg-12
                     h1 Casual Ballroom
                     .row
                         .col-md-12.col-lg-12
-                            img.pull-left(src="img/icon_31840.svg", width="250px", height="250px")
-                            p.
-                                I really want to dance, but I don’t want to do competitions…” we heard you say. The Ballroom and Latin Social Classes are exactly what you are looking for! It does not matter if you cannot commit to every single lesson, it does not matter what your level is and it does not matter if you cannot completely follow the routine. These classes are for you to social with others, to enjoy the dance and the music but at the same time to learn what you want to learn.  We offer Ballroom and Latin lessons for Beginners as well as Intermediate/Advance dancers. For those that are completely new to dancing, you do not need to worry about what to wear. Just turn up to the lessons. But if you would like to dance more in the future, a pair of Latin dance shoes is a great investment! One day you might think, “I want to do competitions! I want to put my full commitment into dancing.” No problem, talk to our competitive Ballroom and Latin (Maybe a link here) teachers and dancers to understand the life of a competitive dancer.  Remember you are always welcomed in the team!
-            .row#salsa(data-panel="#salsa")
+                            img.pull-right(src="img/icon_31840.svg", width="250px", height="250px")
+                            p I really want to dance, but I don’t want to do competitions…” we heard you say. The Ballroom and Latin Social Classes are exactly what you are looking for! It does not matter if you cannot commit to every single lesson, it does not matter what your level is and it does not matter if you cannot completely follow the routine. These classes are for you to social with others, to enjoy the dance and the music but at the same time to learn what you want to learn.  We offer Ballroom and Latin lessons for Beginners as well as Intermediate/Advance dancers.
+                            p For those that are completely new to dancing, you do not need to worry about what to wear. Just turn up to the lessons. But if you would like to dance more in the future, a pair of Latin dance shoes is a great investment!
+                            p
+                                | One day you might think, “I want to do competitions! I want to put my full commitment into dancing.” No problem, talk to our competitive&nbsp;
+                                a(href="#contact") team captains
+                                | &nbsp;to understand the life of a competitive dancer. Remember you are always welcomed in the team!
+            .row#salsa
                 .col-md-12.col-lg-12
                     h1 Salsa
                     .row
                         .col-md-12.col-lg-12
-                            img.pull-left(src="img/icon_34370.svg", width="250px", height="250px")
+                            img.pull-right(src="img/icon_34370.svg", width="250px", height="250px")
                             p.
-                                Need a break from studying? You should join ICDU's salsa classes! Whether you are a complete beginner or an advanced dancer, you can sure to find a class that will be the right fit for your level. Our teacher, Laith Sami, is a salsa Europian Champion and is very active in the UK's salsa scene. Ask any of his students, he is a great performer, teacher and is incredibly funny. Once he's made you a salsa superstar, you will have many opportunities to show off your new skills on the dancefloor at one of our many socials. So leave those textbooks alone, put your coursework to the side for a second and come have fun with us. See you soon!
+                                Need a break from studying? You should join our salsa classes! Whether you are a complete beginner or an advanced dancer, you can sure to find a class that will be the right fit for your level. Our teacher, Laith Sami, is a salsa Europian Champion and is very active in the UK's salsa scene. Ask any of his students, he is a great performer, teacher and is incredibly funny. Once he's made you a salsa superstar, you will have many opportunities to show off your new skills on the dancefloor at one of our many socials. So leave those textbooks alone, put your coursework to the side for a second and come have fun with us. See you soon!
                             p.
                                 This class is a social class, which means you can come along whenever you like and give salsa a try. You will get more out of the class if you can attend every week though (and maybe practice in between) because this will allow you to progress to our more advanced salsa classes quickly!
 
-            .row#competitive(data-panel="#competitive")
+            .row#competitive
                 .col-md-12.col-lg-12
                     h1 Competitive Dancing
                     .row
                         .col-md-6.col-lg-6
-                            img.pull-left.trophy(src="img/icon_2477.svg", width="250px", height="250px")
+                            img.pull-left.trophy(src="img/icon_2477.svg", width="220px", height="220px")
                             p.push-down.
                                 One of the main activities of the Club is competitive Ballroom and Latin dancing, also known as Dancesport. For those people who are interested in going to competitions, we run classes at three different levels: Beginners Team, Novice and Intermediate/Advanced.
                             p.
@@ -147,7 +151,7 @@ html.no-js
                             p.
                                 At the beginning of each year tryouts are held to determine partnerships and the dancing level of our dancers. You will be taught a short choreography at the start of the tryout and then asked to dance with various partners.
                                 ALL LEVELS above beginner are encouraged to attend tryouts! This is an opportunity for the coaches to get to know you and to find the best partner for you. It is not a test!
-                                If you have miss tryouts or have joined late you can get in touch with the team captain here for advice/ dance arrangements
+                                If you have miss tryouts or have joined late you can get in touch with the team captain here for advice/dance arrangements
                         .col-md-6.col-lg-6
                             h2 Commitment
                             p.
@@ -160,12 +164,16 @@ html.no-js
 
                     .row
                         .col-md-6.col-lg-6
+                            img.winners-box.pull-right(src="img/icon_23506.svg", width="150px", height="150px")
                             h2#competitions Competitions
                             p.
-                        .col-md-6.col-lg-6
-                            h2 Eligibilty criteria
-                            p.
-
+                                We intend to attend following competitions in any academic year. The dates may
+                                vary from year to year. We will let everyone know as soon as they are known.
+                            ul
+                                li Nottingham Varsity Competition
+                                li Sheffield Social
+                                li Southern University Dance Competition
+                                li Inter Varsity Dance Competition
                     .row
                         .col-md-12.col-lg-12
                             .well.action-button
@@ -186,8 +194,10 @@ html.no-js
                                 Sometimes unfortunate events happen that mean you are not able to commit to dancing main team for a set of competitions or you cannot find a suitable partner for the season…
                                 This can happen but it is really frustrating when you have to stop dancing because there are no competitive classes available for you without a partner. This is why we have technique classes!
                                 By coming regularly to these practices you can maintain and improve your individual level of dancing (you don’t need a fixed partner for the lessons) and we hope it can act as a platform for single partners hoping to compete to meet and form new partnerships.
-                            p.
-                                Note: You will be expected to commit to attending classes regularly since the aim of these classes is to progress through the year and improve on previous skills learnt. Alos classes as aimed at competitors and are not social classes. If you are looking for social dancing please see our page social ballroom and latin.
+                            .well.well-sm
+                                p.lead Note
+                                p.
+                                    You will be expected to commit to attending classes regularly since the aim of these classes is to progress through the year and improve on previous skills learnt. Alos classes as aimed at competitors and are not social classes. If you are looking for social dancing please see our page social ballroom and latin.
 
                         .col-md-6.col-lg-6
                             h2 Beginners Team
@@ -205,15 +215,15 @@ html.no-js
                             p.
                                 Beginners from universities across the UK compete in their own circuit so although it may seem scary you will be competing against people of your same level. Competitions are the best part of dancesport as they are incredibly fun team events as well allowing you to see your fantastic improvement through the year!
 
-                            p.
-                                Note for current beginner team:
-                                You may be wondering what happens to you after our last competition IVDC…
-                                We hope many of you will want to stay on till next year and join either Novice or Intermediate level competitions as part of main team.
-                                So what happens during this transition period? MORE DANCING is always the answer.
-                                It is a difficult time with many people having exams but putting in the effort to continue dancing now will serve you in good stead for Nottingham competition next year!
-
-                                This is the timetable for the rest of the year and the open competitions we are planning to attend. After the summer break you should come back and come to our team tryouts so you can all get partnered up again and so we can admire how much you have improved!
-            .row#dances(data-panel="#dances")
+                            .well.well-sm
+                                p.lead Note for current beginner team:
+                                p.
+                                    You may be wondering what happens to you after our last competition IVDC…
+                                    We hope many of you will want to stay on till next year and join either Novice or Intermediate level competitions as part of main team.
+                                    So what happens during this transition period? MORE DANCING is always the answer.
+                                    It is a difficult time with many people having exams but putting in the effort to continue dancing now will serve you in good stead for Nottingham competition next year!
+                                    After the summer break you should come back and come to our team tryouts so you can all get partnered up again and so we can admire how much you have improved!
+            .row#dances
                 .col-md-12.col-lg-12
                     h1 Dances
                     .row
@@ -274,12 +284,12 @@ html.no-js
                             h3 Cha Cha
                             p.
                                 This is a cheeky, lively and flirtatious dance, it has a catch-me-if-you-can atmosphere, and is light and bubbly. By the early fifties it had developed from mambo into a dance in its own right and had been given the name ‘Chacha’. The name comes from the sound made by the feet during the 3-step change of weight, cha-cha-cha.
-            .row#howtojoin(data-panel="#howtojoin")
+            .row#faq
                 .col-md-12.col-lg-12
-                    h1 How To Join
+                    h1 FAQ
                     .row
                         .col-md-12.col-lg-12
-                            #faq
+                            #faq-items
                                 .item
                                     h3 Do I need a partner?
                                     p.
@@ -291,27 +301,35 @@ html.no-js
                                         Comfortable clothes and sports shoes or flats. If you have some shoes that don’t have too much grip that is preferable because that lets you spin better!! If you decide to stick to dance then we can advise you on some dance shoes to buy and where to get them.
                                 .item
                                     h3 How much does it cost?
+                                    p
+                                        | Each class is charged by hour. One hour is&nbsp;
+                                        strong £4 for members
+                                        | &nbsp;and&nbsp;
+                                        strong £6 for non-members.
+                                .item
+                                    h3 Membership (Imperial College Students)
+                                    p
+                                        | Imperial College students and Union members can become members of Dance Soc by signing up online&nbsp;
+                                        strong
+                                            a(href="https://www.imperialcollegeunion.org/shop/club-society-project-products/dance-products") here
+                                        | . Once you've done that, bring a copy of your confirmation email to any class (on smartphone or otherwise), and we will give you a membership card which allows you to get 33% off all classes, and even more if you bulk buy! Don't forget to always carry your card with you.
+                                .item
+                                    h3 Membership (Others)
+                                    p
+                                        | Other Further or Higher Education students, as well as members of Imperial College staff or ex-students will need the following:&nbsp;
+                                        strong Imperial College Union Membership AND IC Dance Club Membership
+                                        | . Instructions how to buy Imperial College Union Membership can be found&nbsp;
+                                        strong
+                                            a(here="https://www.imperialcollegeunion.org/your-union/how-were-run/membership") here
+                                        | . Once you've bought Union Membership, you will need to buy Club Membership, which can be done online&nbsp;
+                                        strong
+                                            a(href="https://www.imperialcollegeunion.org/shop/club-society-project-products/dance-products") here
+                                        | . Note that without membership you can only attend scheduled lessons and cannt use pracice space
+                                .item
+                                    h3 Free lessons (with membership)
                                     p.
-                                        Each class is charged by hour.
-                                        One hour is £4 for members and £6 for non-members.
-                                        Membership
-
-                                        Imperial Students
-                                        Imperial College students and Union members can become members of Dance Soc by signing up online here. Once you've done that, bring a copy of your confirmation email to any class (on smartphone or otherwise), and we will give you a membership card which allows you to get 33% off all classes, and even more if you bulk buy! Don't forget to always carry your card with you.
-
-                                        Others
-                                        Other Further or Higher Education students, as well as members of Imperial College staff or ex-students will need the following:
-
-                                        Imperial College Union Membership    AND     IC Dance Soc Membership
-
-                                        Once you've bought Union Membership, you will need to buy Club Membership, which can be done online here. You can find an explanation of the Union Membership policy here. Note that membership is required to attend all lessons, including private lessons. We cannot let you join a lesson unless you are a Union Member. Also see our Alumni Association. Do not hesitate to contact us for more information.
-
-                                        Membership: £20    Lesson Prices (Per Lesson):        Bulkbuy Cards (10 Lessons):
-                                        Club Members - £4            Club Members - £35
-                                        Non Members - £6
-                                    p.
-                                        Top tip: To get you hooked to dance we often offer free taster sessions or free classes with membership since we know the best way to get you started is to get you dancing! The best way to hear about any deals we have is to join our mailing list. You can do that here mailing list subscription.
-            .row#timetable(data-panel="#timetable")
+                                        To get you hooked to dance we offer free taster sessions or free classes with membership since we know the best way to get you started is to get you dancing! The best way to hear about any deals we have is to join our mailing list. You can do that here mailing list subscription.
+            .row#timetable
                 .col-md-12.col-lg-12
                     h1 Timetable
                     #timetable-calendar
@@ -331,7 +349,7 @@ html.no-js
                                         | &nbsp;JCR is located in building marked 20 on the map, entry is opposite to the building number 16.
                                 .col-md-6.col-lg-6
                                     h3 Union Rooms
-                                    p Union Dining Hal and Activity Spaces are on 1st floor and Union Concert Hall is on 2nd.
+                                    p Union Dining Hall and Activity Spaces are on 1st floor and Union Concert Hall is on 2nd.
                             .row
                                 .col-md-6.col-lg-6
                                     h3 EEE
@@ -341,30 +359,31 @@ html.no-js
                             h2 Room Policy
                             p.
                                 Please be aware that if there is a class in a given room your ability to play music will be limited
-                            p.
-                                We have several rooms available for practice during the week, all listed on the Timetable. The rooms listed as "Practice Space" are for the benefit of all members of the club, while the rooms listed as "Team Practice Space" are reserved for members of the Ballroom and Latin Main Team, and for private lessons of Team Coaches (Natasha and Snow).
-                                Being a dance club, we require a lot more space than most other clubs. The Union exceptionally allows us to book all these rooms under the following conditions:
-                                    Please     only practise in rooms that have been officially booked.
-                                    Please     leave the rooms as you found them. Any furniture you move must be     put replaced.
-                                    You     are also welcome to practise in rooms where group lessons are being     held as long as this doesn't disturb the rest of the dancers and     there is enough space.
-
-            .row#about(data-panel="#about")
-                .col-md-12.col-lg-12
-                    h1 About
-                    .row
-                        .col-md-6.col-lg-6
-                            p.
-                                Come join Imperial College Dance Club for a FREE evening of dancing, drinking and decadent fun...
-                            p.
-                                Whether you already enjoy dance or have two left feet, come to meet new people, take part in taster classes and watch demonstration routines in BALLROOM, LATIN and SALSA dance!
-                            p.
-                                FREE entry and refreshments served all night long. Saturday 15th March, 7-11pm, JCR South Kensington campus
-                            p.
-                                Watch out for our beautiful ladies and suave gentlemen dressed up and dancing around campus! An event NOT TO BE MISSED, promising to be a spectacular night.
-                            p.
-                                Suitable for absolute beginners and seasoned dancers alike. Dress well and dance hard!
-                        .col-md-6.col-lg-6
-                            img.thumbnail(src="img/poster-social.png", width="512px", height="724px")
+                            p
+                                | We have several rooms available for practice during the week, all listed on the Timetable.
+                                | Being a dance club, we require a lot more space than most other clubs.
+                                | The Union exceptionally allows us to book all these rooms under the following conditions:
+                                ul
+                                    li Please only practise in rooms that have been officially booked.
+                                    li Please leave the rooms as you found them. Any furniture you move must be put replaced.
+                                | You are also welcome to practise in rooms where group lessons are being held as long as this doesn't disturb the rest of the dancers and there is enough space.
+            //- .row#about
+            //-     .col-md-12.col-lg-12
+            //-         h1 About
+            //-         .row
+            //-             .col-md-6.col-lg-6
+            //-                 p.
+            //-                     Come join Imperial College Dance Club for a FREE evening of dancing, drinking and decadent fun...
+            //-                 p.
+            //-                     Whether you already enjoy dance or have two left feet, come to meet new people, take part in taster classes and watch demonstration routines in BALLROOM, LATIN and SALSA dance!
+            //-                 p.
+            //-                     FREE entry and refreshments served all night long. Saturday 15th March, 7-11pm, JCR South Kensington campus
+            //-                 p.
+            //-                     Watch out for our beautiful ladies and suave gentlemen dressed up and dancing around campus! An event NOT TO BE MISSED, promising to be a spectacular night.
+            //-                 p.
+            //-                     Suitable for absolute beginners and seasoned dancers alike. Dress well and dance hard!
+            //-             .col-md-6.col-lg-6
+            //-                 img.thumbnail(src="img/poster-social.png", width="512px", height="724px")
         footer#contact
             .container
                 .row
