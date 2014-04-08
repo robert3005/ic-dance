@@ -20,13 +20,13 @@ body{padding-top:50px}
 .navbar .navbar-nav > li > a:hover{color:#fff}
 .navbar .navbar-brand{color:#fff}
 .icons{text-align:center;background-color:#f4fce8;padding:40px 0}
-.picture{background:url("/img/8386981186_e84e30625a_o.jpg") no-repeat center center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;text-align:center;padding:60px 15px 150px;position:relative;box-shadow:inset 0 0 120px rgba(0,0,0,0.9);inset:0 0 80px rgba(0,0,0,0.83);}
+.picture{background:url("../img/8386981186_e84e30625a_o.jpg") no-repeat center center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;text-align:center;padding:60px 15px 150px;position:relative;box-shadow:inset 0 0 120px rgba(0,0,0,0.9);inset:0 0 80px rgba(0,0,0,0.83);}
 .picture .container{position:relative;z-index:15}
 .picture:after{content:'';top:0;left:0;z-index:10;width:100%;height:100%;display:block;position:absolute;background:rgba(0,0,0,0.7)}
 .picture h1{color:#fbf3ea;font-family:nauertregular;font-size:200px;line-height:.8;border:none}
 .picture h2{color:#fbf3ea;font-family:nauertregular;font-size:90px;border:none}
-.picture h2:before{content:"";background-image:url("/img/title-deco-left.png");background-repeat:no-repeat;width:150px;height:54px;margin-top:10px;margin-right:15px;display:inline-block;background-size:cover;vertical-align:top}
-.picture h2:after{content:"";background-image:url("/img/title-deco-right.png");background-repeat:no-repeat;width:150px;height:54px;margin-top:10px;margin-left:15px;display:inline-block;background-size:cover;vertical-align:top}
+.picture h2:before{content:"";background-image:url("../img/title-deco-left.png");background-repeat:no-repeat;width:150px;height:54px;margin-top:10px;margin-right:15px;display:inline-block;background-size:cover;vertical-align:top}
+.picture h2:after{content:"";background-image:url("../img/title-deco-right.png");background-repeat:no-repeat;width:150px;height:54px;margin-top:10px;margin-left:15px;display:inline-block;background-size:cover;vertical-align:top}
 .push-down{margin-top:20px}
 .dance-steps{margin:30px 5px 45px}
 .trophy{margin:30px 5px 15px}
