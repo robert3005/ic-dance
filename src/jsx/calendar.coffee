@@ -24,6 +24,7 @@ Calendar = React.createClass
         $(".btn", root).button()
         $(@refs.cal.getDOMNode()).fullCalendar
             firstDay: 1
+            weekMode: 'liqiud'
         @toggleCalendar "casual_ballroom"
         @toggleCalendar "salsa"
         @toggleCalendar "technique"
