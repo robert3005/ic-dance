@@ -15,3 +15,4 @@ $ ->
     $("#faq-items").masonry
         itemSelector: ".item"
         gutter: 10
+        isFitWidth: true
