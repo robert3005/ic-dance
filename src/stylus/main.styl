@@ -268,3 +268,37 @@ footer
 .separator
     border-top 1px solid #eeeeee
     margin-top 20px
+
+@media (max-width: 665px)
+    .picture
+        h1
+            font-size 120px
+        h2
+            font-size 50px
+            &:before
+            &:after
+                display none
+
+@media (min-width: 665px) and (max-width: 1000px)
+    .picture
+        h1
+            font-size 120px
+        h2
+            font-size 50px
+            &:before
+            &:after
+                width 100px
+                height 36px
+                margin-top 5px
+
+@media (min-width: 1001px) and (max-width: 1199px)
+    .picture
+        h1
+            font-size 170px
+        h2
+            font-size 70px
+            &:before
+            &:after
+                width 120px
+                height 42px
+                margin-top 8px
