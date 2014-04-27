@@ -96,4 +96,4 @@ module.exports = (grunt) ->
     require("matchdep").filterDev("grunt-*").forEach grunt.loadNpmTasks
 
     grunt.registerTask "build", ["coffeelint", "jade", "stylus", "coffee", "react", "copy"]
-    grunt.registerTask "default", ["watch"]
+    grunt.registerTask "default", ["build", "watch"]
