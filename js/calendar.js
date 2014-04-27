@@ -34,7 +34,8 @@ Calendar = React.createClass({
   componentDidMount: function(root) {
     $(".btn", root).button();
     $(this.refs.cal.getDOMNode()).fullCalendar({
-      firstDay: 1
+      firstDay: 1,
+      weekMode: 'liqiud'
     });
     this.toggleCalendar("casual_ballroom");
     this.toggleCalendar("salsa");

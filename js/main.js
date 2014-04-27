@@ -7,12 +7,16 @@
     google.maps.event.addDomListener(window, "load", function() {
       return React.renderComponent(Map(), map);
     });
+    $(".nav a").on("click", function() {
+      return $(".navbar-toggle").click();
+    });
     $("footer a").tooltip({
       placement: "right"
     });
     return $("#faq-items").masonry({
       itemSelector: ".item",
-      gutter: 10
+      gutter: 10,
+      isFitWidth: true
     });
   });
 

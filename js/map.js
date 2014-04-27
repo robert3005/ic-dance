@@ -72,9 +72,16 @@ Map = React.createClass({
     center: new google.maps.LatLng(51.4989207, -.1769148),
     zoom: 15,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-    navigationControl: true,
+    disableDefaultUI: true,
     mapTypeControl: false,
     scaleControl: false,
+    zoomControlOptions: {
+      position: google.maps.ControlPosition.RIGHT_BOTTOM,
+      style: google.maps.ZoomControlStyle.SMALL
+    },
+    zoomControl: true,
+    streetViewControl: true,
+    panControl: true,
     styles: styles
   },
   contentString: "<div class=\"infoWindow\" style=\"overflow: none\">\n    <strong>Imperial College London</strong>\n    <p>\n        South Kensington Campus<br />\n        Exhibition Road<br />\n        London, SW7 2AZ<br />\n    </p>\n</div>",
