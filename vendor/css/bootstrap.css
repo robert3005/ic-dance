@@ -3720,8 +3720,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
-.navbar .container {
-  width: 100%;
+@media (max-width: 991px) {
+  .navbar .container {
+    width: 100%;
+  }
 }
 @media (min-width: 992px) {
   .navbar {
