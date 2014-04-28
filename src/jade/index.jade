@@ -9,7 +9,7 @@ html.no-js
         link(rel="stylesheet", href="vendor/css/bootstrap.css")
         link(rel="stylesheet", href="vendor/css/font-awesome.css")
         link(rel="stylesheet", href="vendor/css/fullcalendar.css")
-        link(rel="stylesheet", media="print", href="/vendor/css/fullcalendar.print.css")
+        link(rel="stylesheet", media="print", href="vendor/css/fullcalendar.print.css")
         link(rel="stylesheet", href="css/main.css")
         script(src="vendor/js/modernizr-2.7.1.js")
     body(data-spy="scroll", data-offset="60px", data-target=".navbar-fixed-top")
@@ -25,7 +25,7 @@ html.no-js
                 nav.collapse.navbar-collapse(role="navigation")
                     ul.nav.navbar-nav
                         li
-                            a(href="#classes") Learn To Dance
+                            a(href="#classes") Learn to Dance
                         li
                             a(href="#casual") Casual Ballroom
                         li
@@ -72,7 +72,7 @@ html.no-js
         .container
             .row#classes
                 .col-md-12.col-lg-12
-                    h1 Learn To Dance
+                    h1 Learn to Dance
                     .row
                         .col-md-6.col-lg-6
                             p.lead.push-down.
@@ -81,14 +81,14 @@ html.no-js
                                 Have a look through our classes aimed at beginners to see which one excites you most. You can join more than one too!
                             img.pull-left.dance-steps(src="img/icon_9109.svg", width="350px", height="350px")
                         .col-md-6.col-lg-6
-                            h2 Social Ballroom and Latin
+                            h2 Casual Ballroom for Beginners
                             p.
                                 Competitions are not for everyone - sometimes you just want to learn how to dance beautifully and get to know other people that enjoy this sport without the stress of having to commit to competing! If that’s the case come try out our social ballroom and latin lessons:
                             p
                                 | Like for beginner team you will be initially taught 4 dances:
                                 ul
                                     li Latin: cha cha and jive
-                                    li Ballroom: waltz and quickstep
+                                    li Ballroom: Waltz and Quickstep
                             p.
                                 One of the major aims of this class is to teach very important dance skills: leading and following! The goal is for you to able to dance, without a choreography, with people you may not have danced with before but make it look awesome!
 
@@ -96,7 +96,7 @@ html.no-js
                             p.
                                 This is a great option if you have never danced before. Salsa is a very social dance and there are loads of opportunities to show off your moves at the socials that we organise throughout the year and also outside university in the many salsa bars and clubs of London! For more info, have a look at section III
 
-                            h2 Dancesport Beginners' Team
+                            h2 Competitive Beginners Team
                             p.
                                 If you want to dance like the Strictly Come Dancing stars, this is the class for you! We know this sounds like an absolute cliché on a dance club website but it is the truth! Well actually, if you want the truth - our teachers can teach you better technique than on the TV show! For more info, have a look at section IV...
             .row#dances
@@ -190,13 +190,16 @@ html.no-js
                     .row
                         .col-md-6.col-lg-6
                             img.pull-left.trophy(src="img/icon_2477.svg", width="220px", height="220px")
-                            p.push-down.
-                                One of the main activities of the Club is competitive Ballroom and Latin dancing, also known as Dancesport. For those people who are interested in going to competitions, we run classes at three different levels: Beginners Team, Novice and Intermediate/Advanced.
-                            p.
-                                Each clubs runs classes slightly differently so we have summarized the structure of classes offered by Imperial College Dance club offering a quick rationale for each class.
-                                Please take a moment to read each one if you are interested in competing for Imperial College dance team.
+                            p.push-down
+                              | One of the main activities of IC Dance Club is competitive Ballroom and Latin dancing, also known as Dancesport. For those interested in going to competitions, we run classes at three levels: beginners, novice and intermediate/advanced. For beginners, we have the&nbsp;
+                              a(href="#beginnersteam") Beginners Team
+                              |. For more experienced dancers, we have Novice and Int/Adv&nbsp;
+                              a(href="#technique") Technique practices
+                              |.  Finally, for those experienced dancers who want more practice and devote themselves to dancing as much as they can, we have the&nbsp;
+                              a(href="#mainteam") Main Team
+                              |.
                         .col-md-6.col-lg-6
-                            h2 Main Team practices
+                            h2#mainteam Main Team practices
                             p.
                                 Main team is what all our competitive dancers aim for – it means that you are representing Imperial College Dance club at competitions and upholding our name against other universities with your awesome dancing!!
                             p.
@@ -225,16 +228,27 @@ html.no-js
                             img.winners-box.pull-right(src="img/icon_23506.svg", width="150px", height="150px")
                             h2#competitions Competitions
                             p.
-                                We intend to attend following competitions in any academic year. The dates may
-                                vary from year to year. We will let everyone know as soon as they are known.
+
+                              One of the most exciting aspects of being part of IC Dance Team is competing together as a team. During the first part of the year (September - March), the majority of the university competitions throughout the UK take place, and we traditionally attend four of them. This culminates with the Inter-Varsity Dance Competition (IVDC), held in the beginning of March in Blackpool - the biggest and most important university competition of the year.
+                            p.
+
+                              In the second part of the competitive season (March - September), we attend open circuit competitions.  These do not distinguish between students and ex-students as in the university circuit.
+                            p.
+                              University circuit competitions
                             ul
-                                li Nottingham Varsity Competition
-                                li Sheffield Social
-                                li Southern University Dance Competition
-                                li Inter Varsity Dance Competition
+                                li Nottingham Varsity Competition (Nottingham, end of November)
+                                li Sheffield Social (Sheffield, beginning of February)
+                                li Southern University Dance Competition (TBC, mid-February)
+                                li Inter Varsity Dance Competition (Blackpool, beginning of March)
+                            p.
+                              Open circuit competitions
+                            ul
+                                li Epsom Trophy Day (Chessington, Sunday 4 May 2014)
+                                li Stars of the Future (Brentwood, Saturday 7 June 2014)
+                                li Bournemouth Summer Festival (Bournemouth, 24-27 July 2014)
                     .row
                         .col-md-6.col-lg-6
-                            h2 Technique classes
+                            h2#technique Technique classes
                             p.
                                 These classes form the backbone of Imperial College Dance!
                             p.
@@ -253,13 +267,17 @@ html.no-js
                                     You will be expected to commit to attending classes regularly since the aim of these classes is to progress through the year and improve on previous skills learnt. Alos classes as aimed at competitors and are not social classes. If you are looking for social dancing please see our page social ballroom and latin.
 
                         .col-md-6.col-lg-6
-                            h2 Beginners Team
+                            h2#beginnersteam Beginners Team
                             p.
-                                Are you a beginner and interested in dancing ballroom or latin competitively on the university circuit? Then join our Beginners Team practices (more info on the beginner’s page)! Being part of our competitive Beginners Team is one of the most entertaining and rewarding adventures at university!
+                                Are you a beginner and interested in dancing ballroom or latin competitively? Then join our Beginners Team, and be part of one of the most entertaining and rewarding adventures at Imperial!
                             p.
-                                This lessons aims to introduce absolute beginners to the competitive aspect of dancesport. You will initially learn four dances:
-                                two ballroom: Waltz and Quickstep
-                                two latin: Cha-cha-cha and Jive
+                                Starting in October, there are two Beginners
+                                Team practices every week - during them you will
+                                be introduced to the competitive aspect of
+                                dancesport, from the absolute beginner level.
+                                You will initially learn four dances - two
+                                ballroom (Waltz and Quickstep) and two latin
+                                (Cha-cha-cha and Jive).
                             p.
                                 As you progress through the year, you will start learning about the other six dances! In March, the beginners team starts with new routines
                                 (Other     dances will be taught as you progress to higher levels - see main     team for full list of dances)
@@ -275,7 +293,7 @@ html.no-js
                                     We hope many of you will want to stay on till next year and join either Novice or Intermediate level competitions as part of main team.
                                     So what happens during this transition period? MORE DANCING is always the answer.
                                     It is a difficult time with many people having exams but putting in the effort to continue dancing now will serve you in good stead for Nottingham competition next year!
-            .row#faq
+                                    After the summer break you should come back and come to our team tryouts so you can all get partnered up again and so we can admire how much you have improved!
                 .col-md-12.col-lg-12
                     h1 FAQ
                     .row
@@ -341,28 +359,25 @@ html.no-js
                             .row
                                 .col-md-6.col-lg-6
                                     h3 JCR
-                                    p
-                                        | &nbsp;JCR is located in building marked 20 on the map, entry is opposite to the building number 16.
+                                    p The Junior Common Room (JCR) is number 20 on the map; the entrance is opposite building number 16.
+
                                 .col-md-6.col-lg-6
                                     h3 Union Rooms
-                                    p Union Dining Hall and Activity Spaces are on 1st floor and Union Concert Hall is on 2nd.
+                                    p The Union Dining Hall (UDH) and the two Activity Spaces (UAS1 and UAS2) are located on the 1st floor of the Imperial College Union building (number 2 on the map), located in Beit Quad. The Union Concert Hall (UCH) is on the 2nd floor.
                             .row
                                 .col-md-6.col-lg-6
                                     h3 EEE
-                                    p Electrical &amp; Electronic Engineering is marked by number 16 on the map.
+                                    p The Electrical &amp; Electronic Engineering (EEE) building is number 16 on the map.
 
                         .col-md-6.col-lg-6
                             h2 Room Policy
-                            p.
-                                Please be aware that if there is a class in a given room your ability to play music will be limited
                             p
-                                | We have several rooms available for practice during the week, all listed on the Timetable.
-                                | Being a dance club, we require a lot more space than most other clubs.
-                                | The Union exceptionally allows us to book all these rooms under the following conditions:
-                                ul
-                                    li Please only practise in rooms that have been officially booked.
-                                    li Please leave the rooms as you found them. Any furniture you move must be put replaced.
-                                | You are also welcome to practise in rooms where group lessons are being held as long as this doesn't disturb the rest of the dancers and there is enough space.
+                              | We have several rooms available for practice during the week - you can find them listed on the Timetable. As a dance club, we require a lot more space than most other clubs; the Union exceptionally allows us to book all these rooms under the following conditions:
+                              ul
+                                  li Only practise in rooms that have been officially booked;
+                                  li Leave the rooms as you found them - any furniture you move to clear up space must be replaced at the end of your practice.
+                              | You are also welcome to practise in rooms where group classes are taking place, as long as this does not disturb the class and there is enough space.
+
             //- .row#about
             //-     .col-md-12.col-lg-12
             //-         h1 About
@@ -425,6 +440,9 @@ html.no-js
                             a.btn.btn-default(href="https://www.facebook.com/groups/588363304553222/")
                                 i.fa.fa-facebook
                                 span Team
+                            a.btn.btn-default(href="https://www.facebook.com/groups/icdaa/")
+                                i.fa.fa-facebook
+                                span Alumni
                     .col-md-6.col-lg-6.location-pic
                         #map.thumbnail
 
