@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var map, timetable;
+    var animateScroll, locationHash, map, timetable;
     timetable = document.getElementById("timetable-calendar");
     React.renderComponent(Calendar(), timetable);
     map = document.getElementById("map");
@@ -13,11 +13,35 @@
     $("footer a").tooltip({
       placement: "right"
     });
-    return $("#faq-items").masonry({
+    $("#faq-items").masonry({
       itemSelector: ".item",
       gutter: 10,
       isFitWidth: true
     });
+    animateScroll = function(element) {
+      var $body, $window, scrollTo;
+      $window = $(window);
+      $body = $("body, html");
+      scrollTo = $(element).offset().top - 60;
+      if (Math.abs($window.scrollTop() - scrollTo) > 1500) {
+        return $body.scrollTop(scrollTo);
+      } else {
+        return $body.animate({
+          scrollTop: scrollTo
+        });
+      }
+    };
+    $("a[href^=#]").click(function(ev) {
+      var hrefAnchor;
+      ev.preventDefault();
+      hrefAnchor = $(this).attr("href");
+      history.pushState({}, hrefAnchor, hrefAnchor);
+      return animateScroll(hrefAnchor);
+    });
+    locationHash = window.location.hash;
+    if (locationHash) {
+      return _.defer(animateScroll.bind(null, locationHash));
+    }
   });
 
 }).call(this);
