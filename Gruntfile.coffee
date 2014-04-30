@@ -72,8 +72,9 @@ module.exports = (grunt) ->
             dist:
                 options:
                     media: ["print"]
+                    ignore: [/#map[a-z\.]*/, ".infoWindow", /timetable[a-z\. ]*/, /fc[a-z\. ]*/, /btn[a-z\-\. :]*/]
                 files:
-                  "css/main.dist.css": ["index.html"]
+                  "css/main.dist.css": ["index.full.html"]
 
         cssmin:
             minify:
