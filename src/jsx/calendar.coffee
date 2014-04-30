@@ -38,6 +38,7 @@ Calendar = React.createClass
             firstDay: 1
             weekMode: "liqiud"
             aspectRatio: 1.8
+            timeFormat: "h(:mm)A"
 
         @restoreFromStorage()
 
