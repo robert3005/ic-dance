@@ -33,10 +33,25 @@ Calendar = React.createClass
         $(".btn", root).button()
         $(@refs.cal.getDOMNode()).fullCalendar
             firstDay: 1
-            weekMode: 'liqiud'
-        @toggleCalendar "casual_ballroom"
-        @toggleCalendar "salsa"
-        @toggleCalendar "competitive"
+            weekMode: "liqiud"
+            aspectRatio: 1.8
+
+        @restoreFromStorage()
+
+    restoreFromStorage: ->
+        calendars = JSON.parse(localStorage.getItem "ic-dance-calendars")
+        if not calendars?
+            calendars = {}
+            calendars["casual_ballroom"] = true
+            calendars["salsa"] = true
+            calendars["competitive"] = true
+
+        _.each calendars, (enabled, name) ->
+            @toggleCalendar name if enabled
+        , @
+
+    saveStateStorage: ->
+        localStorage.setItem "ic-dance-calendars", JSON.stringify(@state)
 
     toggleCalendar: (name) ->
         newValues = {}
@@ -57,7 +72,7 @@ Calendar = React.createClass
             , @
             newValues[name] = true
 
-        @setState newValues
+        @setState newValues, @saveStateStorage
 
     render: ->
         cx = React.addons.classSet
