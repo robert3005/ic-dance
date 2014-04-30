@@ -114,12 +114,21 @@ input::-moz-focus-inner {
   .navbar {
     display: none;
   }
+
+  .btn > .caret,
+  .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
 }
 
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.glyphicon-briefcase:before {
+  content: "\e139";
 }
 
 * {
@@ -331,6 +340,12 @@ address {
   color: #999;
 }
 
+@media (min-width: 768px) {
+  .form-inline .input-group .input-group-btn {
+    width: auto;
+  }
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -352,7 +367,8 @@ address {
 }
 
 .btn:focus,
-.btn:active:focus {
+.btn:active:focus,
+.btn.active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -364,11 +380,23 @@ address {
   text-decoration: none;
 }
 
-.btn:active {
+.btn:active,
+.btn.active {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  opacity: .65;
 }
 
 .btn-default {
@@ -379,18 +407,657 @@ address {
 
 .btn-default:hover,
 .btn-default:focus,
-.btn-default:active {
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
 
-.btn-default:active {
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
   background-image: none;
+}
+
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.btn-default .badge {
+  color: #fff;
+  background-color: #333;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #3071a9;
+  border-color: #285e8e;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+.btn-primary .badge {
+  color: #428bca;
+  background-color: #fff;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open > .dropdown-toggle.btn-success {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+
+.btn-success:active,
+.btn-success.active,
+.open > .dropdown-toggle.btn-success {
+  background-image: none;
+}
+
+.btn-success.disabled,
+.btn-success[disabled],
+fieldset[disabled] .btn-success,
+.btn-success.disabled:hover,
+.btn-success[disabled]:hover,
+fieldset[disabled] .btn-success:hover,
+.btn-success.disabled:focus,
+.btn-success[disabled]:focus,
+fieldset[disabled] .btn-success:focus,
+.btn-success.disabled:active,
+.btn-success[disabled]:active,
+fieldset[disabled] .btn-success:active,
+.btn-success.disabled.active,
+.btn-success[disabled].active,
+fieldset[disabled] .btn-success.active {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn-success .badge {
+  color: #5cb85c;
+  background-color: #fff;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.open > .dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+
+.btn-info:active,
+.btn-info.active,
+.open > .dropdown-toggle.btn-info {
+  background-image: none;
+}
+
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.btn-info .badge {
+  color: #5bc0de;
+  background-color: #fff;
+}
+
+.btn-warning {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active,
+.open > .dropdown-toggle.btn-warning {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+
+.btn-warning:active,
+.btn-warning.active,
+.open > .dropdown-toggle.btn-warning {
+  background-image: none;
+}
+
+.btn-warning.disabled,
+.btn-warning[disabled],
+fieldset[disabled] .btn-warning,
+.btn-warning.disabled:hover,
+.btn-warning[disabled]:hover,
+fieldset[disabled] .btn-warning:hover,
+.btn-warning.disabled:focus,
+.btn-warning[disabled]:focus,
+fieldset[disabled] .btn-warning:focus,
+.btn-warning.disabled:active,
+.btn-warning[disabled]:active,
+fieldset[disabled] .btn-warning:active,
+.btn-warning.disabled.active,
+.btn-warning[disabled].active,
+fieldset[disabled] .btn-warning.active {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+.btn-warning .badge {
+  color: #f0ad4e;
+  background-color: #fff;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-danger.active,
+.open > .dropdown-toggle.btn-danger {
+  color: #fff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+
+.btn-danger:active,
+.btn-danger.active,
+.open > .dropdown-toggle.btn-danger {
+  background-image: none;
+}
+
+.btn-danger.disabled,
+.btn-danger[disabled],
+fieldset[disabled] .btn-danger,
+.btn-danger.disabled:hover,
+.btn-danger[disabled]:hover,
+fieldset[disabled] .btn-danger:hover,
+.btn-danger.disabled:focus,
+.btn-danger[disabled]:focus,
+fieldset[disabled] .btn-danger:focus,
+.btn-danger.disabled:active,
+.btn-danger[disabled]:active,
+fieldset[disabled] .btn-danger:active,
+.btn-danger.disabled.active,
+.btn-danger[disabled].active,
+fieldset[disabled] .btn-danger.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.btn-danger .badge {
+  color: #d9534f;
+  background-color: #fff;
+}
+
+.btn-link {
+  font-weight: normal;
+  color: #428bca;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.btn-link,
+.btn-link:active,
+.btn-link[disabled],
+fieldset[disabled] .btn-link {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-link,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active {
+  border-color: transparent;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  color: #2a6496;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.btn-link[disabled]:hover,
+fieldset[disabled] .btn-link:hover,
+.btn-link[disabled]:focus,
+fieldset[disabled] .btn-link:focus {
+  color: #999;
+  text-decoration: none;
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+.btn-sm,
+.btn-group-sm > .btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.btn-xs,
+.btn-group-xs > .btn {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+  width: 100%;
 }
 
 .collapse {
   display: none;
+}
+
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-group > .btn,
+.btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+}
+
+.btn-group > .btn:hover,
+.btn-group-vertical > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group-vertical > .btn:focus,
+.btn-group > .btn:active,
+.btn-group-vertical > .btn:active,
+.btn-group > .btn.active,
+.btn-group-vertical > .btn.active {
+  z-index: 2;
+}
+
+.btn-group > .btn:focus,
+.btn-group-vertical > .btn:focus {
+  outline: 0;
+}
+
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group .btn-group + .btn-group {
+  margin-left: -1px;
+}
+
+.btn-toolbar {
+  margin-left: -5px;
+}
+
+.btn-toolbar .btn-group,
+.btn-toolbar .input-group {
+  float: left;
+}
+
+.btn-toolbar > .btn,
+.btn-toolbar > .btn-group,
+.btn-toolbar > .input-group {
+  margin-left: 5px;
+}
+
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+
+.btn-group > .btn:first-child {
+  margin-left: 0;
+}
+
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .dropdown-toggle:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-group > .btn-group {
+  float: left;
+}
+
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+
+.btn-group > .btn-group:first-child > .btn:last-child,
+.btn-group > .btn-group:first-child > .dropdown-toggle {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group > .btn-group:last-child > .btn:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-group .dropdown-toggle:active,
+.btn-group.open .dropdown-toggle {
+  outline: 0;
+}
+
+.btn-group > .btn + .dropdown-toggle {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.btn-group > .btn-lg + .dropdown-toggle {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.btn-group.open .dropdown-toggle.btn-link {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn .caret {
+  margin-left: 0;
+}
+
+.btn-lg .caret {
+  border-width: 5px 5px 0;
+  border-bottom-width: 0;
+}
+
+.dropup .btn-lg .caret {
+  border-width: 0 5px 5px;
+}
+
+.btn-group-vertical > .btn,
+.btn-group-vertical > .btn-group,
+.btn-group-vertical > .btn-group > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+.btn-group-vertical > .btn-group > .btn {
+  float: none;
+}
+
+.btn-group-vertical > .btn + .btn,
+.btn-group-vertical > .btn + .btn-group,
+.btn-group-vertical > .btn-group + .btn,
+.btn-group-vertical > .btn-group + .btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+
+.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.btn-group-vertical > .btn:first-child:not(:last-child) {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-group-vertical > .btn:last-child:not(:first-child) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+}
+
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.btn-group-justified {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+
+.btn-group-justified > .btn,
+.btn-group-justified > .btn-group {
+  display: table-cell;
+  float: none;
+  width: 1%;
+}
+
+.btn-group-justified > .btn-group .btn {
+  width: 100%;
+}
+
+[data-toggle="buttons"] > .btn > input[type="radio"],
+[data-toggle="buttons"] > .btn > input[type="checkbox"] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.input-group-lg > .input-group-btn > .btn {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+select.input-group-lg > .input-group-btn > .btn {
+  height: 46px;
+  line-height: 46px;
+}
+
+textarea.input-group-lg > .input-group-btn > .btn,
+select[multiple].input-group-lg > .input-group-btn > .btn {
+  height: auto;
+}
+
+.input-group-sm > .input-group-btn > .btn {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+select.input-group-sm > .input-group-btn > .btn {
+  height: 30px;
+  line-height: 30px;
+}
+
+textarea.input-group-sm > .input-group-btn > .btn,
+select[multiple].input-group-sm > .input-group-btn > .btn {
+  height: auto;
+}
+
+.input-group-btn {
+  display: table-cell;
+}
+
+.input-group-btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.input-group-btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+}
+
+.input-group-btn > .btn {
+  position: relative;
+}
+
+.input-group-btn > .btn + .btn {
+  margin-left: -1px;
+}
+
+.input-group-btn > .btn:hover,
+.input-group-btn > .btn:focus,
+.input-group-btn > .btn:active {
+  z-index: 2;
+}
+
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group {
+  margin-right: -1px;
+}
+
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group {
+  margin-left: -1px;
 }
 
 .nav {
@@ -603,6 +1270,43 @@ address {
   }
 }
 
+@media (min-width: 992px) {
+  .navbar-form .input-group .input-group-btn {
+    width: auto;
+  }
+}
+
+.navbar-btn {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.navbar-btn.btn-sm {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.navbar-btn.btn-xs {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.navbar-default .btn-link {
+  color: #777;
+}
+
+.navbar-default .btn-link:hover,
+.navbar-default .btn-link:focus {
+  color: #333;
+}
+
+.navbar-default .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-default .btn-link:hover,
+.navbar-default .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-default .btn-link:focus {
+  color: #ccc;
+}
+
 .navbar-inverse {
   background-color: #222;
   border-color: #080808;
@@ -643,6 +1347,37 @@ address {
 
 .navbar-inverse .navbar-collapse {
   border-color: #101010;
+}
+
+.navbar-inverse .btn-link {
+  color: #999;
+}
+
+.navbar-inverse .btn-link:hover,
+.navbar-inverse .btn-link:focus {
+  color: #fff;
+}
+
+.navbar-inverse .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-inverse .btn-link:hover,
+.navbar-inverse .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-inverse .btn-link:focus {
+  color: #444;
+}
+
+.btn .label {
+  position: relative;
+  top: -1px;
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+
+.btn-xs .badge {
+  top: 0;
+  padding: 1px 5px;
 }
 
 .thumbnail {
@@ -718,10 +1453,31 @@ address {
   border-radius: 3px;
 }
 
+.modal-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+
+.modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+
+.modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+
+.carousel-caption .btn {
+  text-shadow: none;
+}
+
 .container:before,
 .container:after,
 .row:before,
 .row:after,
+.btn-toolbar:before,
+.btn-toolbar:after,
+.btn-group-vertical > .btn-group:before,
+.btn-group-vertical > .btn-group:after,
 .nav:before,
 .nav:after,
 .navbar:before,
@@ -736,6 +1492,8 @@ address {
 
 .container:after,
 .row:after,
+.btn-toolbar:after,
+.btn-group-vertical > .btn-group:after,
 .nav:after,
 .navbar:after,
 .navbar-header:after,
@@ -767,8 +1525,8 @@ address {
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../../fonts/fontawesome-webfont.eot?v=4.0.3');
-  src: url('../../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+  src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -854,6 +1612,10 @@ address {
   content: "\f09a";
 }
 
+.fa-briefcase:before {
+  content: "\f0b1";
+}
+
 .fa-envelope:before {
   content: "\f0e0";
 }
@@ -864,19 +1626,119 @@ address {
  * (c) 2013 Adam Shaw
  */
 
+.fc {
+  direction: ltr;
+  text-align: left;
+}
+
+.fc table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html .fc,
+.fc table {
+  font-size: 1em;
+}
+
+.fc td,
+.fc th {
+  padding: 0;
+  vertical-align: top;
+}
+
 /* Header
 ------------------------------------------------------------------------*/
 
+.fc-header td {
+  white-space: nowrap;
+}
+
+.fc-header-left {
+  width: 25%;
+  text-align: left;
+}
+
+.fc-header-center {
+  text-align: center;
+}
+
+.fc-header-right {
+  width: 25%;
+  text-align: right;
+}
+
+.fc-header-title {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.fc-header-title h2 {
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.fc .fc-header-space {
+  padding-left: 10px;
+}
+
+.fc-header .fc-button {
+  margin-bottom: 1em;
+  vertical-align: top;
+}
+
 /* buttons edges butting together */
 
+.fc-header .fc-button {
+  margin-right: -1px;
+}
+
+.fc-header .fc-corner-right,
+/* non-theme */
+.fc-header .ui-corner-right {
+  /* theme */
+  margin-right: 0;
+  /* back to normal */
+}
+
 /* button layering (for border precedence) */
+
+.fc-header .fc-state-hover,
+.fc-header .ui-state-hover {
+  z-index: 2;
+}
+
+.fc-header .fc-state-down {
+  z-index: 3;
+}
+
+.fc-header .fc-state-active,
+.fc-header .ui-state-active {
+  z-index: 4;
+}
 
 /* Content
 ------------------------------------------------------------------------*/
 
+.fc-content {
+  position: relative;
+  z-index: 1;
+  /* scopes all other z-index's to be inside this container */
+  clear: both;
+  zoom: 1;
+  /* for IE7, gives accurate coordinates for [un]freezeContentHeight */
+}
+
+.fc-view {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
 /* Cell Styles
 ------------------------------------------------------------------------*/
 
+.fc-widget-header,
 /* <th>,
 usually */
 .fc-widget-content {
@@ -884,54 +1746,492 @@ usually */
   border: 1px solid #ddd;
 }
 
+.fc-state-highlight {
+  /* <td> today cell */
+  /* TODO: add .fc-today to <th> */
+  background: #fcf8e3;
+}
+
+.fc-cell-overlay {
+  /* semi-transparent rectangle while dragging */
+  background: #bce8f1;
+  opacity: .3;
+  filter: alpha(opacity=30);
+  /* for IE */
+}
+
 /* Buttons
 ------------------------------------------------------------------------*/
+
+.fc-button {
+  position: relative;
+  display: inline-block;
+  padding: 0 .6em;
+  overflow: hidden;
+  height: 1.9em;
+  line-height: 1.9em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.fc-state-default {
+  /* non-theme */
+  border: 1px solid;
+}
+
+.fc-state-default.fc-corner-left {
+  /* non-theme */
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.fc-state-default.fc-corner-right {
+  /* non-theme */
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
 
 /*
 	Our default prev/next buttons use HTML entities like &lsaquo; &rsaquo; &laquo; &raquo;
 	and we'll try to make them look good cross-browser.
 */
 
+.fc-button .fc-icon {
+  margin: 0 .1em;
+  font-size: 2em;
+  font-family: "Courier New", Courier, monospace;
+  vertical-align: baseline;
+  /* for IE7 */
+}
+
+.fc-icon-left-single-arrow:after {
+  content: "\02039";
+  font-weight: bold;
+}
+
+.fc-icon-right-single-arrow:after {
+  content: "\0203A";
+  font-weight: bold;
+}
+
+.fc-icon-left-double-arrow:after {
+  content: "\000AB";
+}
+
+.fc-icon-right-double-arrow:after {
+  content: "\000BB";
+}
+
 /* icon (for jquery ui) */
+
+.fc-button .ui-icon {
+  position: relative;
+  top: 50%;
+  float: left;
+  margin-top: -8px;
+  /* we know jqui icons are always 16px tall */
+}
 
 /*
   button states
   borrowed from twitter bootstrap (http://twitter.github.com/bootstrap/)
 */
 
+.fc-state-default {
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  color: #333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.fc-state-hover,
+.fc-state-down,
+.fc-state-active,
+.fc-state-disabled {
+  color: #333333;
+  background-color: #e6e6e6;
+}
+
+.fc-state-hover {
+  color: #333333;
+  text-decoration: none;
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+
+.fc-state-down,
+.fc-state-active {
+  background-color: #cccccc;
+  background-image: none;
+  outline: 0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.fc-state-disabled {
+  cursor: default;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  box-shadow: none;
+}
+
 /* Global Event Styles
 ------------------------------------------------------------------------*/
+
+.fc-event-container > * {
+  z-index: 8;
+}
+
+.fc-event-container > .ui-draggable-dragging,
+.fc-event-container > .ui-resizable-resizing {
+  z-index: 9;
+}
+
+.fc-event {
+  border: 1px solid #3a87ad;
+  /* default BORDER color */
+  background-color: #3a87ad;
+  /* default BACKGROUND color */
+  color: #fff;
+  /* default TEXT color */
+  font-size: .85em;
+  cursor: default;
+}
+
+a.fc-event {
+  text-decoration: none;
+}
+
+a.fc-event,
+.fc-event-draggable {
+  cursor: pointer;
+}
+
+.fc-rtl .fc-event {
+  text-align: right;
+}
+
+.fc-event-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fc-event-time,
+.fc-event-title {
+  padding: 0 1px;
+}
+
+.fc .ui-resizable-handle {
+  display: block;
+  position: absolute;
+  z-index: 99999;
+  overflow: hidden;
+  /* hacky spaces (IE6/7) */
+  font-size: 300%;
+  /* */
+  line-height: 50%;
+  /* */
+}
 
 /* Horizontal Events
 ------------------------------------------------------------------------*/
 
+.fc-event-hori {
+  border-width: 1px 0;
+  margin-bottom: 1px;
+}
+
+.fc-ltr .fc-event-hori.fc-event-start,
+.fc-rtl .fc-event-hori.fc-event-end {
+  border-left-width: 1px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.fc-ltr .fc-event-hori.fc-event-end,
+.fc-rtl .fc-event-hori.fc-event-start {
+  border-right-width: 1px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
 /* resizable */
+
+.fc-event-hori .ui-resizable-e {
+  top: 0           !important;
+  /* importants override pre jquery ui 1.7 styles */
+  right: -3px      !important;
+  width: 7px       !important;
+  height: 100%     !important;
+  cursor: e-resize;
+}
+
+.fc-event-hori .ui-resizable-w {
+  top: 0           !important;
+  left: -3px       !important;
+  width: 7px       !important;
+  height: 100%     !important;
+  cursor: w-resize;
+}
+
+.fc-event-hori .ui-resizable-handle {
+  _padding-bottom: 14px;
+  /* IE6 had 0 height */
+}
 
 /* Reusable Separate-border Table
 ------------------------------------------------------------*/
 
+table.fc-border-separate {
+  border-collapse: separate;
+}
+
+.fc-border-separate th,
+.fc-border-separate td {
+  border-width: 1px 0 0 1px;
+}
+
+.fc-border-separate th.fc-last,
+.fc-border-separate td.fc-last {
+  border-right-width: 1px;
+}
+
+.fc-border-separate tr.fc-last th,
+.fc-border-separate tr.fc-last td {
+  border-bottom-width: 1px;
+}
+
+.fc-border-separate tbody tr.fc-first td,
+.fc-border-separate tbody tr.fc-first th {
+  border-top-width: 0;
+}
+
 /* Month View, Basic Week View, Basic Day View
 ------------------------------------------------------------------------*/
 
+.fc-grid th {
+  text-align: center;
+}
+
+.fc .fc-week-number {
+  width: 22px;
+  text-align: center;
+}
+
+.fc .fc-week-number div {
+  padding: 0 2px;
+}
+
+.fc-grid .fc-day-number {
+  float: right;
+  padding: 0 2px;
+}
+
+.fc-grid .fc-other-month .fc-day-number {
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+  /* for IE */
+  /* opacity with small font can sometimes look too faded
+	   might want to set the 'color' property instead
+	   making day-numbers bold also fixes the problem */
+}
+
+.fc-grid .fc-day-content {
+  clear: both;
+  padding: 2px 2px 1px;
+  /* distance between events and day edges */
+}
+
 /* event styles */
 
+.fc-grid .fc-event-time {
+  font-weight: bold;
+}
+
 /* right-to-left */
+
+.fc-rtl .fc-grid .fc-day-number {
+  float: left;
+}
+
+.fc-rtl .fc-grid .fc-event-time {
+  float: right;
+}
 
 /* Agenda Week View, Agenda Day View
 ------------------------------------------------------------------------*/
 
+.fc-agenda table {
+  border-collapse: separate;
+}
+
+.fc-agenda-days th {
+  text-align: center;
+}
+
+.fc-agenda .fc-agenda-axis {
+  width: 50px;
+  padding: 0 4px;
+  vertical-align: middle;
+  text-align: right;
+  font-weight: normal;
+}
+
+.fc-agenda-slots .fc-agenda-axis {
+  white-space: nowrap;
+}
+
+.fc-agenda .fc-week-number {
+  font-weight: bold;
+}
+
+.fc-agenda .fc-day-content {
+  padding: 2px 2px 1px;
+}
+
 /* make axis border take precedence */
+
+.fc-agenda-days .fc-agenda-axis {
+  border-right-width: 1px;
+}
+
+.fc-agenda-days .fc-col0 {
+  border-left-width: 0;
+}
 
 /* all-day area */
 
+.fc-agenda-allday th {
+  border-width: 0 1px;
+}
+
+.fc-agenda-allday .fc-day-content {
+  min-height: 34px;
+  /* TODO: doesnt work well in quirksmode */
+  _height: 34px;
+}
+
 /* divider (between all-day and slots) */
 
+.fc-agenda-divider-inner {
+  height: 2px;
+  overflow: hidden;
+}
+
+.fc-widget-header .fc-agenda-divider-inner {
+  background: #eee;
+}
+
 /* slot rows */
+
+.fc-agenda-slots th {
+  border-width: 1px 1px 0;
+}
+
+.fc-agenda-slots td {
+  border-width: 1px 0 0;
+  background: none;
+}
+
+.fc-agenda-slots td div {
+  height: 20px;
+}
+
+.fc-agenda-slots tr.fc-slot0 th,
+.fc-agenda-slots tr.fc-slot0 td {
+  border-top-width: 0;
+}
+
+.fc-agenda-slots tr.fc-minor th,
+.fc-agenda-slots tr.fc-minor td {
+  border-top-style: dotted;
+}
+
+.fc-agenda-slots tr.fc-minor th.ui-widget-header {
+  *border-top-style: solid;
+  /* doesn't work with background in IE6/7 */
+}
 
 /* Vertical Events
 ------------------------------------------------------------------------*/
 
+.fc-event-vert {
+  border-width: 0 1px;
+}
+
+.fc-event-vert.fc-event-start {
+  border-top-width: 1px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.fc-event-vert.fc-event-end {
+  border-bottom-width: 1px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.fc-event-vert .fc-event-time {
+  white-space: nowrap;
+  font-size: 10px;
+}
+
+.fc-event-vert .fc-event-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.fc-event-vert .fc-event-bg {
+  /* makes the event lighter w/ a semi-transparent overlay  */
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: .25;
+  filter: alpha(opacity=25);
+}
+
+.fc .ui-draggable-dragging .fc-event-bg,
+/* TODO: something nicer like .fc-opacity */
+.fc-select-helper .fc-event-bg {
+  display: none\9;
+  /* for IE6/7/8. nested opacity filters while dragging don't work */
+}
+
 /* resizable */
+
+.fc-event-vert .ui-resizable-s {
+  bottom: 0        !important;
+  /* importants override pre jquery ui 1.7 styles */
+  width: 100%      !important;
+  height: 8px      !important;
+  overflow: hidden !important;
+  line-height: 8px !important;
+  font-size: 11px  !important;
+  font-family: monospace;
+  text-align: center;
+  cursor: s-resize;
+}
+
+.fc-agenda .ui-resizable-resizing {
+  /* TODO: better selector */
+  _overflow: hidden;
+}
 
 /*!
  * FullCalendar v2.0.0-beta2 Print Stylesheet
@@ -948,7 +2248,20 @@ usually */
 /* Events
 -----------------------------------------------------*/
 
+.fc-event {
+  background: #fff !important;
+  color: #000 !important;
+}
+
 /* for vertical events */
+
+.fc-event-bg {
+  display: none !important;
+}
+
+.fc-event .ui-resizable-handle {
+  display: none !important;
+}
 
 @font-face {
   font-family: 'nauertregular';
@@ -956,6 +2269,52 @@ usually */
   src: url("../fonts/nauertregular-webfont.eot?#iefix") format('embedded-opentype'),url("../fonts/nauertregular-webfont.woff") format('woff'),url("../fonts/nauertregular-webfont.ttf") format('truetype'),url("../fonts/nauertregular-webfont.svg#nauertregular") format('svg');
   font-weight: normal;
   font-style: normal;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #7ed0d6;
+  border-color: #4abdc6;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #4abdc6;
+  border-color: #31949b;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #7ed0d6;
+  border-color: #4abdc6;
+}
+
+.btn-primary .badge {
+  color: #7ed0d6;
+  background-color: #fff;
 }
 
 .btn-default {
@@ -966,14 +2325,42 @@ usually */
 
 .btn-default:hover,
 .btn-default:focus,
-.btn-default:active {
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
   color: #fff;
   background-color: #53c470;
   border-color: #359c4f;
 }
 
-.btn-default:active {
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
   background-image: none;
+}
+
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+  background-color: #87d69b;
+  border-color: #53c470;
+}
+
+.btn-default .badge {
+  color: #87d69b;
+  background-color: #fff;
 }
 
 body {
@@ -1065,7 +2452,7 @@ body {
 
 .picture h2:before {
   content: "";
-  background-image: url("../img/title-deco-left.png");
+  background-image: url("/img/title-deco-left.png");
   background-repeat: no-repeat;
   width: 150px;
   height: 54px;
@@ -1078,7 +2465,7 @@ body {
 
 .picture h2:after {
   content: "";
-  background-image: url("../img/title-deco-right.png");
+  background-image: url("/img/title-deco-right.png");
   background-repeat: no-repeat;
   width: 150px;
   height: 54px;
@@ -1126,6 +2513,58 @@ body {
 
 .item:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.75),0 -3px 8px rgba(0,0,0,0.5);
+}
+
+.timetable .btn-group {
+  margin: 30px 0 20px;
+}
+
+.timetable .btn {
+  text-transform: capitalize;
+}
+
+.timetable .fc-event {
+  color: #000;
+}
+
+.timetable .fc-event-vert.fc-event-end {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.timetable .fc-event-vert.fc-event-start {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.timetable .rooms {
+  background-color: #7bd148 !important;
+  border-color: #5fb42d !important;
+}
+
+.timetable .technique {
+  background-color: #c2c2c2 !important;
+  border-color: #9b9b9b !important;
+}
+
+.timetable .casual_ballroom {
+  background-color: #fad26b !important;
+  border-color: #f8bd26 !important;
+}
+
+.timetable .salsa {
+  background-color: #bea2ff !important;
+  border-color: #844fff !important;
+}
+
+.timetable .beginners_team {
+  background-color: #f7a3be !important;
+  border-color: #f05889 !important;
+}
+
+.timetable .team {
+  background-color: #b58271 !important;
+  border-color: #9b6351 !important;
 }
 
 h1 {
@@ -1184,7 +2623,9 @@ footer .btn:first-child {
 
 footer .btn:hover,
 footer .btn:focus,
-footer .btn:active {
+footer .btn:active,
+footer .btn.active,
+.open .dropdown-togglefooter .btn {
   border-color: #fff;
 }
 
@@ -1200,6 +2641,16 @@ footer .media i {
 #map {
   width: 100%;
   height: 518px;
+}
+
+#map > div {
+  width: 100%;
+  height: 100%;
+}
+
+.infoWindow {
+  color: #000;
+  text-align: left;
 }
 
 .ballroom-icon {
