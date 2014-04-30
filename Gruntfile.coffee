@@ -65,11 +65,49 @@ module.exports = (grunt) ->
             index:
                 files: [{
                     src: "templates/index.html"
-                    dest: "index.html"
+                    dest: "index.full.html"
                 }]
 
+        uncss:
+            dist:
+                options:
+                    media: ["print"]
+                files:
+                  "css/main.dist.css": ["index.html"]
+
+        cssmin:
+            minify:
+                files:
+                    "css/main.min.css": ["css/main.dist.css"]
+
+        clean:
+            all: ["css", "js", "build", "templates"]
+
+        browserify:
+            dist:
+                options:
+                    transform: ["browserify-shim"]
+                files:
+                    "js/dist/main.js": ["js/*.js"]
+            live:
+                options:
+                    transform: ["browserify-shim"]
+                    watch: true
+                    keepAlive: true
+                files:
+                    "js/dist/main.js": ["js/*.js"]
+        uglify:
+            dist:
+                files:
+                    "js/dist/main.min.js": ["js/dist/main.js"]
+
+        processhtml:
+            dist:
+                files:
+                  "index.html": ["templates/index.html"]
+
         watch:
-            less:
+            styl:
                 files: "src/stylus/**/*.styl"
                 tasks: ["stylus"]
                 options:
@@ -77,23 +115,34 @@ module.exports = (grunt) ->
             coffee:
                 files: "src/coffee/**/*.coffee"
                 tasks: ["coffeelint", "coffee:main"]
-                options:
-                    livereload: true
             jsx:
                 files: "src/jsx/**/*.coffee"
                 tasks: ["coffeelint", "coffee:react"]
             html:
                 files: "src/jade/**/*.jade"
-                tasks: ["jade", "copy:index"]
+                tasks: ["jade", "processhtml", "copy:index"]
                 options:
                     livereload: true
             react:
                 files: "build/**/*.jsx"
                 tasks: ["react"]
+            browserify:
+                files: "js/dist/main.js"
                 options:
                     livereload: true
+
+        concurrent:
+            watch:
+                options:
+                    logConcurrentOutput: true
+                tasks: ["watch", "browserify:live"]
+
 
     require("matchdep").filterDev("grunt-*").forEach grunt.loadNpmTasks
 
     grunt.registerTask "build", ["coffeelint", "jade", "stylus", "coffee", "react", "copy"]
-    grunt.registerTask "default", ["build", "watch"]
+    grunt.registerTask "css", ["stylus", "uncss", "cssmin"]
+    grunt.registerTask "js", ["coffeelint", "coffee", "react", "browserify:dist", "uglify"]
+    grunt.registerTask "tpl", ["jade", "processhtml", "copy"]
+    grunt.registerTask "dist", ["css", "js", "tpl"]
+    grunt.registerTask "default", ["build", "concurrent"]

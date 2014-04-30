@@ -3754,9 +3754,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     -webkit-box-shadow: none;
             box-shadow: none;
   }
-  /*Supress animation when there's nothing to collapse*/
-  .navbar-collapse.collapse,
-  .navbar-collapse.collapsing {
+  .navbar-collapse.collapse {
     display: block !important;
     height: auto !important;
     padding-bottom: 0;
