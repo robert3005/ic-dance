@@ -44,7 +44,7 @@ body{padding-top:50px}
 .timetable .beginners{background-color:#ffad46 !important;border-color:#ff9005 !important}
 .timetable .team{background-color:#ea2e49 !important;border-color:#cc142f !important}
 .timetable .competitive{background-color:#4986e7 !important;border-color:#1c64d7 !important;color:#fff !important}
-.timetable .casual_ballroom{background-color:#16a765 !important;border-color:#128651 !important}
+.timetable .casual_ballroom{background-color:#16a765 !important;border-color:#128651 !important;color:#fff !important}
 .timetable .salsa{background-color:#fad165 !important;border-color:#f8bd21 !important}
 h1{border-bottom:1px solid #eee;padding-bottom:10px;margin:30px 0 20px}
 footer{border-style:solid;border-width:1px 0 0;border-color:#389baf;box-shadow:0 -1px 0 rgba(255,255,255,0.1);background-color:#77c4d3;color:#fff;padding:20px 0 30px;margin-top:50px;}

@@ -2545,6 +2545,7 @@ body {
 .timetable .casual_ballroom {
   background-color: #16a765 !important;
   border-color: #128651 !important;
+  color: #fff !important;
 }
 
 .timetable .salsa {

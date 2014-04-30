@@ -52,7 +52,17 @@ Calendar = React.createClass({displayName: 'Calendar',
     $(this.refs.cal.getDOMNode()).fullCalendar({
       firstDay: 1,
       weekMode: "liqiud",
-      aspectRatio: 1.8
+      aspectRatio: 1.8,
+      timeFormat: "h(:mm)A",
+      defaultView: localStorage.getItem("ic-dance-view" || "month"),
+      header: {
+        left: "title",
+        center: "",
+        right: "today month,agendaWeek prev,next"
+      },
+      viewRender: function(view, el) {
+        return localStorage.setItem("ic-dance-view", view.name);
+      }
     });
     return this.restoreFromStorage();
   },
