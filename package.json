@@ -3,15 +3,19 @@
   "version": "0.0.1",
   "description": "",
   "devDependencies": {
+    "browserify-shim": "^3.4.1",
     "grunt": "~0.4.1",
     "grunt-bg-shell": "~2.0.2",
     "grunt-browserify": "^2.0.8",
     "grunt-coffeelint": "0.0.6",
-    "grunt-contrib-clean": "~0.4.1",
+    "grunt-concurrent": "^0.5.0",
+    "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-coffee": "~0.7.0",
     "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-cssmin": "^0.9.0",
     "grunt-contrib-jade": "~0.7.0",
     "grunt-contrib-stylus": "~0.5.1",
+    "grunt-contrib-uglify": "^0.4.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-processhtml": "^0.3.3",
     "grunt-react": "~0.8.0",
@@ -20,6 +24,49 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browser": {
+    "bootstrap": "./vendor/js/bootstrap.js",
+    "fullcalendar": "./vendor/js/fullcalendar.js",
+    "gcal": "./vendor/js/gcal.js",
+    "moment": "./vendor/js/moment.js",
+    "jquery": "./vendor/js/jquery-2.1.0.js",
+    "lodash": "./vendor/js/lodash.js",
+    "react": "./vendor/js/react-0.10.0.js",
+    "masonry": "./vendor/js/masonry.pkgd.js",
+    "plugins": "./vendor/js/plugins.js"
+  },
+  "browserify-shim": {
+    "bootstrap": {
+      "exports": "bootstrap",
+      "depends": [
+        "jquery:$",
+        "jquery:jQuery"
+      ]
+    },
+    "gcal": {
+      "exports": "gcal",
+      "depends": [
+        "jquery:$",
+        "jquery:jQuery",
+        "fullcalendar:"
+      ]
+    },
+    "fullcalendar": {
+      "exports": "fullcalendar",
+      "depends": [
+        "jquery:$",
+        "jquery:jQuery",
+        "moment:moment"
+      ]
+    },
+    "masonry": {
+      "exports": "masonry",
+      "depends": [
+        "jquery:$",
+        "jquery:jQuery"
+      ]
+    }
   },
   "repository": {
     "type": "git",

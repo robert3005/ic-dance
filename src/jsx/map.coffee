@@ -1,4 +1,7 @@
 `/** @jsx React.DOM */`
+
+React = require "react"
+
 styles = [
     {
         "featureType": "landscape"
@@ -111,3 +114,5 @@ Map = React.createClass
 
     render: ->
         `<div ref="map"></div>`
+
+module.exports = Map

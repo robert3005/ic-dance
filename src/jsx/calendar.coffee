@@ -1,4 +1,12 @@
 `/** @jsx React.DOM */`
+
+React = require "react"
+_ = require "lodash"
+$ = require "jquery"
+require "bootstrap"
+require "fullcalendar"
+require "gcal"
+
 googleCalendarBase = "https://www.google.com/calendar/feeds/"
 googleCalendarSuffix = "%40group.calendar.google.com/public/basic"
 
@@ -70,3 +78,5 @@ Calendar = React.createClass
             </div>
             <div className="calendar" ref="cal" />
         </div>`
+
+module.exports = Calendar

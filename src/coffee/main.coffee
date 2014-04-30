@@ -1,3 +1,13 @@
+require "bootstrap"
+require "masonry"
+require "plugins"
+React = require "react"
+$ = require "jquery"
+_ = require "lodash"
+Map = require "./map"
+Calendar = require "./calendar"
+
+
 $ ->
     timetable = document.getElementById "timetable-calendar"
     React.renderComponent Calendar(), timetable
@@ -7,7 +17,7 @@ $ ->
         React.renderComponent Map(), map
 
     $(".nav a").on "click", ->
-        $(".navbar-toggle").click()
+        $(".navbar-toggle").click() if window.innerWidth < 992
 
     $("footer a").tooltip
         placement: "right"
