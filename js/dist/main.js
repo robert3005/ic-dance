@@ -48,11 +48,28 @@ Calendar = React.createClass({displayName: 'Calendar',
     $(".btn", root).button();
     $(this.refs.cal.getDOMNode()).fullCalendar({
       firstDay: 1,
-      weekMode: 'liqiud'
+      weekMode: "liqiud",
+      aspectRatio: 1.8
     });
-    this.toggleCalendar("casual_ballroom");
-    this.toggleCalendar("salsa");
-    return this.toggleCalendar("competitive");
+    return this.restoreFromStorage();
+  },
+  restoreFromStorage: function() {
+    var calendars;
+    calendars = JSON.parse(localStorage.getItem("ic-dance-calendars"));
+    if (calendars == null) {
+      calendars = {};
+      calendars["casual_ballroom"] = true;
+      calendars["salsa"] = true;
+      calendars["competitive"] = true;
+    }
+    return _.each(calendars, function(enabled, name) {
+      if (enabled) {
+        return this.toggleCalendar(name);
+      }
+    }, this);
+  },
+  saveStateStorage: function() {
+    return localStorage.setItem("ic-dance-calendars", JSON.stringify(this.state));
   },
   toggleCalendar: function(name) {
     var newValues;
@@ -74,7 +91,7 @@ Calendar = React.createClass({displayName: 'Calendar',
       }, this);
       newValues[name] = true;
     }
-    return this.setState(newValues);
+    return this.setState(newValues, this.saveStateStorage);
   },
   render: function() {
     var calendars, cx;
