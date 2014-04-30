@@ -21,11 +21,15 @@ Calendar = React.createClass({displayName: 'Calendar',
   calendars: _.reduce({
     casual_ballroom: ["olr3earjdohc3mjhb32092da4s"],
     salsa: ["75g92duhl999rkvdi2v6dmls14"],
-    competitive: ["0hu43sj0f9po3p64o4cck8rco0", "37vfmbf5b8intk85utod6o23bc", "d2nicj15qdd1oacuvhftq3csg4"],
+    competitive: [["0hu43sj0f9po3p64o4cck8rco0", "competitive"], ["37vfmbf5b8intk85utod6o23bc", "beginners"], ["d2nicj15qdd1oacuvhftq3csg4", "team"]],
     rooms: ["m7s6e2b9f8onjl6nn16tsisf6c"]
   }, function(acc, address, name) {
     acc[name] = _.map(address, function(cal) {
-      return googleCalendarBase + cal + googleCalendarSuffix;
+      if (cal instanceof Array) {
+        return [googleCalendarBase + cal[0] + googleCalendarSuffix, cal[1]];
+      } else {
+        return googleCalendarBase + cal + googleCalendarSuffix;
+      }
     });
     return acc;
   }, {}, this),
@@ -71,24 +75,29 @@ Calendar = React.createClass({displayName: 'Calendar',
     return localStorage.setItem("ic-dance-calendars", JSON.stringify(this.state));
   },
   toggleCalendar: function(name) {
-    var newValues;
+    var changeCalendar, newValues,
+      _this = this;
     newValues = {};
+    changeCalendar = function(evName, value) {
+      _.each(_this.calendars[name], function(cal) {
+        var calClass, calendar;
+        calendar = cal;
+        calClass = name;
+        if (cal instanceof Array) {
+          calendar = cal[0];
+          calClass = cal[1];
+        }
+        return $(this.refs.cal.getDOMNode()).fullCalendar(evName, {
+          url: calendar,
+          className: calClass
+        });
+      }, _this);
+      return newValues[name] = value;
+    };
     if (this.state[name]) {
-      _.each(this.calendars[name], function(cal) {
-        return $(this.refs.cal.getDOMNode()).fullCalendar("removeEventSource", {
-          url: cal,
-          className: name
-        });
-      }, this);
-      newValues[name] = false;
+      changeCalendar("removeEventSource", false);
     } else {
-      _.each(this.calendars[name], function(cal) {
-        return $(this.refs.cal.getDOMNode()).fullCalendar("addEventSource", {
-          url: cal,
-          className: name
-        });
-      }, this);
-      newValues[name] = true;
+      changeCalendar("addEventSource", true);
     }
     return this.setState(newValues, this.saveStateStorage);
   },

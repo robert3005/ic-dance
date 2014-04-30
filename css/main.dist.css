@@ -2522,8 +2522,18 @@ body {
 }
 
 .timetable .rooms {
-  background-color: #fad165 !important;
-  border-color: #f8bd21 !important;
+  background-color: #77c4d3 !important;
+  border-color: #45aec3 !important;
+}
+
+.timetable .beginners {
+  background-color: #d06b64 !important;
+  border-color: #bd4239 !important;
+}
+
+.timetable .team {
+  background-color: #ea2e49 !important;
+  border-color: #cc142f !important;
 }
 
 .timetable .competitive {
@@ -2538,8 +2548,8 @@ body {
 }
 
 .timetable .salsa {
-  background-color: #ff7537 !important;
-  border-color: #f84d00 !important;
+  background-color: #fad165 !important;
+  border-color: #f8bd21 !important;
 }
 
 h1 {
