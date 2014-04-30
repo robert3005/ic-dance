@@ -54,7 +54,7 @@ Calendar = React.createClass({displayName: 'Calendar',
       weekMode: "liqiud",
       aspectRatio: 1.8,
       timeFormat: "h(:mm)A",
-      defaultView: localStorage.getItem("ic-dance-view" || "month"),
+      defaultView: localStorage.getItem("ic-dance-view") || "month",
       header: {
         left: "title",
         center: "",
