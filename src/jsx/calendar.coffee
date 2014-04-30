@@ -39,6 +39,13 @@ Calendar = React.createClass
             weekMode: "liqiud"
             aspectRatio: 1.8
             timeFormat: "h(:mm)A"
+            defaultView: localStorage.getItem "ic-dance-view" || "month"
+            header:
+                left:   "title"
+                center: ""
+                right:  "today month,agendaWeek prev,next"
+            viewRender: (view, el) ->
+                localStorage.setItem "ic-dance-view", view.name
 
         @restoreFromStorage()
 
