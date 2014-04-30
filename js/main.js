@@ -1,4 +1,22 @@
 (function() {
+  var $, Calendar, Map, React, _;
+
+  require("bootstrap");
+
+  require("masonry");
+
+  require("plugins");
+
+  React = require("react");
+
+  $ = require("jquery");
+
+  _ = require("lodash");
+
+  Map = require("./map");
+
+  Calendar = require("./calendar");
+
   $(function() {
     var animateScroll, locationHash, map, timetable;
     timetable = document.getElementById("timetable-calendar");
@@ -8,7 +26,9 @@
       return React.renderComponent(Map(), map);
     });
     $(".nav a").on("click", function() {
-      return $(".navbar-toggle").click();
+      if (window.innerWidth < 992) {
+        return $(".navbar-toggle").click();
+      }
     });
     $("footer a").tooltip({
       placement: "right"

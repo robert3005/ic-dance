@@ -1,5 +1,7 @@
 /** @jsx React.DOM */;
-var Map, styles;
+var Map, React, styles;
+
+React = require("react");
 
 styles = [
   {
@@ -67,7 +69,7 @@ styles = [
   }
 ];
 
-Map = React.createClass({
+Map = React.createClass({displayName: 'Map',
   mapOptions: {
     center: new google.maps.LatLng(51.4989207, -.1769148),
     zoom: 15,
@@ -117,6 +119,8 @@ Map = React.createClass({
     return React.DOM.div( {ref:"map"});
   }
 });
+
+module.exports = Map;
 
 /*
 //@ sourceMappingURL=map.js.map

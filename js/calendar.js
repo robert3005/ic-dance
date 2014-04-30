@@ -1,11 +1,23 @@
 /** @jsx React.DOM */;
-var Calendar, googleCalendarBase, googleCalendarSuffix;
+var $, Calendar, React, googleCalendarBase, googleCalendarSuffix, _;
+
+React = require("react");
+
+_ = require("lodash");
+
+$ = require("jquery");
+
+require("bootstrap");
+
+require("fullcalendar");
+
+require("gcal");
 
 googleCalendarBase = "https://www.google.com/calendar/feeds/";
 
 googleCalendarSuffix = "%40group.calendar.google.com/public/basic";
 
-Calendar = React.createClass({
+Calendar = React.createClass({displayName: 'Calendar',
   calendars: _.reduce({
     casual_ballroom: "olr3earjdohc3mjhb32092da4s",
     salsa: "75g92duhl999rkvdi2v6dmls14",
@@ -73,7 +85,7 @@ Calendar = React.createClass({
       displayName = name.split("_").join(" ");
       acc.push(React.DOM.label( {className:cx(classes), key:name,
                     onClick:_.partial(this.toggleCalendar, name)}, 
-                React.DOM.input( {type:"checkbox"} ), displayName
+                React.DOM.input( {type:"checkbox"} ), " ", displayName
             ));
       return acc;
     }, [], this);
@@ -86,6 +98,8 @@ Calendar = React.createClass({
         );
   }
 });
+
+module.exports = Calendar;
 
 /*
 //@ sourceMappingURL=calendar.js.map
