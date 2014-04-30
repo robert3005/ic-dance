@@ -12,14 +12,15 @@ googleCalendarSuffix = "%40group.calendar.google.com/public/basic"
 
 Calendar = React.createClass
     calendars: _.reduce(
-        casual_ballroom: "olr3earjdohc3mjhb32092da4s"
-        salsa: "75g92duhl999rkvdi2v6dmls14"
-        technique: "0hu43sj0f9po3p64o4cck8rco0"
-        beginners_team: "37vfmbf5b8intk85utod6o23bc"
-        team: "d2nicj15qdd1oacuvhftq3csg4"
-        rooms: "m7s6e2b9f8onjl6nn16tsisf6c"
+        casual_ballroom: ["olr3earjdohc3mjhb32092da4s"]
+        salsa: ["75g92duhl999rkvdi2v6dmls14"]
+        competitive: ["0hu43sj0f9po3p64o4cck8rco0",
+            "37vfmbf5b8intk85utod6o23bc"]
+        team: ["d2nicj15qdd1oacuvhftq3csg4"]
+        rooms: ["m7s6e2b9f8onjl6nn16tsisf6c"]
     , (acc, address, name) ->
-        acc[name] = googleCalendarBase + address + googleCalendarSuffix
+        acc[name] = _.map address, (cal) ->
+            googleCalendarBase + cal + googleCalendarSuffix
         return acc
     , {}, @)
 
@@ -35,22 +36,25 @@ Calendar = React.createClass
             weekMode: 'liqiud'
         @toggleCalendar "casual_ballroom"
         @toggleCalendar "salsa"
-        @toggleCalendar "technique"
-        @toggleCalendar "beginners_team"
+        @toggleCalendar "competitive"
 
     toggleCalendar: (name) ->
         newValues = {}
         if this.state[name]
-            $(@refs.cal.getDOMNode())
-                .fullCalendar "removeEventSource",
-                    url: @calendars[name]
-                    className: name
+            _.each @calendars[name], (cal) ->
+                $(@refs.cal.getDOMNode())
+                    .fullCalendar "removeEventSource",
+                        url: cal
+                        className: name
+            , @
             newValues[name] = false
         else
-            $(@refs.cal.getDOMNode())
-                .fullCalendar "addEventSource",
-                    url: @calendars[name]
-                    className: name
+            _.each @calendars[name], (cal) ->
+                $(@refs.cal.getDOMNode())
+                    .fullCalendar "addEventSource",
+                        url: cal
+                        className: name
+            , @
             newValues[name] = true
 
         @setState newValues
