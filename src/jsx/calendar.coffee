@@ -15,8 +15,8 @@ Calendar = React.createClass
         casual_ballroom: ["olr3earjdohc3mjhb32092da4s"]
         salsa: ["75g92duhl999rkvdi2v6dmls14"]
         competitive: ["0hu43sj0f9po3p64o4cck8rco0",
-            "37vfmbf5b8intk85utod6o23bc"]
-        team: ["d2nicj15qdd1oacuvhftq3csg4"]
+            "37vfmbf5b8intk85utod6o23bc",
+            "d2nicj15qdd1oacuvhftq3csg4"]
         rooms: ["m7s6e2b9f8onjl6nn16tsisf6c"]
     , (acc, address, name) ->
         acc[name] = _.map address, (cal) ->
