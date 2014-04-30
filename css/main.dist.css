@@ -2522,28 +2522,24 @@ body {
 }
 
 .timetable .rooms {
-  background-color: #7bd148 !important;
-  border-color: #5fb42d !important;
+  background-color: #fad165 !important;
+  border-color: #f8bd21 !important;
 }
 
 .timetable .competitive {
-  background-color: #c2c2c2 !important;
-  border-color: #9b9b9b !important;
+  background-color: #4986e7 !important;
+  border-color: #1c64d7 !important;
+  color: #fff !important;
 }
 
 .timetable .casual_ballroom {
-  background-color: #fad26b !important;
-  border-color: #f8bd26 !important;
+  background-color: #16a765 !important;
+  border-color: #128651 !important;
 }
 
 .timetable .salsa {
-  background-color: #bea2ff !important;
-  border-color: #844fff !important;
-}
-
-.timetable .team {
-  background-color: #b58271 !important;
-  border-color: #9b6351 !important;
+  background-color: #ff7537 !important;
+  border-color: #f84d00 !important;
 }
 
 h1 {
