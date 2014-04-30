@@ -2542,7 +2542,7 @@ body {
   border-color: #5fb42d !important;
 }
 
-.timetable .technique {
+.timetable .competitive {
   background-color: #c2c2c2 !important;
   border-color: #9b9b9b !important;
 }
@@ -2555,11 +2555,6 @@ body {
 .timetable .salsa {
   background-color: #bea2ff !important;
   border-color: #844fff !important;
-}
-
-.timetable .beginners_team {
-  background-color: #f7a3be !important;
-  border-color: #f05889 !important;
 }
 
 .timetable .team {
