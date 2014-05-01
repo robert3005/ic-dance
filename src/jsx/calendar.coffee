@@ -3,6 +3,7 @@
 React = require "react"
 _ = require "lodash"
 $ = require "jquery"
+moment = require "moment"
 require "bootstrap"
 require "fullcalendar"
 require "gcal"
@@ -39,6 +40,8 @@ Calendar = React.createClass
             weekMode: "liqiud"
             aspectRatio: 1.8
             timeFormat: "h(:mm)A"
+            minTime: moment.duration "09:00:00"
+            maxTime: moment.duration "24:00:00"
             defaultView: localStorage.getItem("ic-dance-view") || "month"
             header:
                 left:   "title"
