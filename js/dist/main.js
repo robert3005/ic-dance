@@ -1,12 +1,14 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /** @jsx React.DOM */;
-var $, Calendar, React, googleCalendarBase, googleCalendarSuffix, _;
+var $, Calendar, React, googleCalendarBase, googleCalendarSuffix, moment, _;
 
 React = require("react");
 
 _ = require("lodash");
 
 $ = require("jquery");
+
+moment = require("moment");
 
 require("bootstrap");
 
@@ -55,6 +57,8 @@ Calendar = React.createClass({displayName: 'Calendar',
       weekMode: "liqiud",
       aspectRatio: 1.8,
       timeFormat: "h(:mm)A",
+      minTime: moment.duration("09:00:00"),
+      maxTime: moment.duration("24:00:00"),
       defaultView: localStorage.getItem("ic-dance-view") || "month",
       header: {
         left: "title",
@@ -144,7 +148,7 @@ module.exports = Calendar;
 /*
 //@ sourceMappingURL=calendar.js.map
 */
-},{"bootstrap":4,"fullcalendar":5,"gcal":6,"jquery":7,"lodash":8,"react":12}],2:[function(require,module,exports){
+},{"bootstrap":4,"fullcalendar":5,"gcal":6,"jquery":7,"lodash":8,"moment":10,"react":12}],2:[function(require,module,exports){
 (function() {
   var $, Calendar, Map, React, _;
 
