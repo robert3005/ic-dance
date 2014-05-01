@@ -127,8 +127,20 @@ input::-moz-focus-inner {
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
+.glyphicon-map-marker:before {
+  content: "\e062";
+}
+
 .glyphicon-briefcase:before {
   content: "\e139";
+}
+
+.glyphicon-collapse-down:before {
+  content: "\e159";
+}
+
+.glyphicon-collapse-up:before {
+  content: "\e160";
 }
 
 * {
@@ -758,6 +770,27 @@ input[type="button"].btn-block {
   display: none;
 }
 
+.collapse.in {
+  display: block;
+}
+
+tr.collapse.in {
+  display: table-row;
+}
+
+tbody.collapse.in {
+  display: table-row-group;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .35s ease;
+  -o-transition: height .35s ease;
+  transition: height .35s ease;
+}
+
 .btn-group,
 .btn-group-vertical {
   position: relative;
@@ -1118,6 +1151,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
 }
 
+.navbar-collapse.in {
+  overflow-y: auto;
+}
+
 @media (min-width: 992px) {
   .navbar-collapse {
     width: auto;
@@ -1133,31 +1170,41 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     overflow: visible !important;
   }
 
-  .navbar-fixed-top .navbar-collapse {
+  .navbar-collapse.in {
+    overflow-y: visible;
+  }
+
+  .navbar-fixed-top .navbar-collapse,
+  .navbar-static-top .navbar-collapse,
+  .navbar-fixed-bottom .navbar-collapse {
     padding-right: 0;
     padding-left: 0;
   }
 }
 
-.navbar-fixed-top .navbar-collapse {
+.navbar-fixed-top .navbar-collapse,
+.navbar-fixed-bottom .navbar-collapse {
   max-height: 340px;
 }
 
 @media (max-width: 480px) and (orientation: landscape) {
-  .navbar-fixed-top .navbar-collapse {
+  .navbar-fixed-top .navbar-collapse,
+  .navbar-fixed-bottom .navbar-collapse {
     max-height: 200px;
   }
 }
 
 .container > .navbar-header,
-.container > .navbar-collapse {
+.container > .navbar-collapse,
+.container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
 }
 
 @media (min-width: 992px) {
   .container > .navbar-header,
-  .container > .navbar-collapse {
+  .container > .navbar-collapse,
+  .container-fluid > .navbar-collapse {
     margin-right: 0;
     margin-left: 0;
   }
@@ -1289,6 +1336,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-btn.btn-xs {
   margin-top: 14px;
   margin-bottom: 14px;
+}
+
+.navbar-default .navbar-collapse {
+  border-color: #e7e7e7;
 }
 
 .navbar-default .btn-link {
@@ -1435,6 +1486,62 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 
 .media > .pull-left {
   margin-right: 10px;
+}
+
+.panel-group .panel-heading + .panel-collapse .panel-body {
+  border-top: 1px solid #ddd;
+}
+
+.panel-group .panel-footer + .panel-collapse .panel-body {
+  border-bottom: 1px solid #ddd;
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ddd;
+}
+
+.panel-default > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ddd;
+}
+
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #428bca;
+}
+
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #428bca;
+}
+
+.panel-success > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #d6e9c6;
+}
+
+.panel-success > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #d6e9c6;
+}
+
+.panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #bce8f1;
+}
+
+.panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #bce8f1;
+}
+
+.panel-warning > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #faebcc;
+}
+
+.panel-warning > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #faebcc;
+}
+
+.panel-danger > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ebccd1;
+}
+
+.panel-danger > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ebccd1;
 }
 
 .modal-footer .btn + .btn {
@@ -1602,6 +1709,10 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 
 .fa-envelope:before {
   content: "\f0e0";
+}
+
+.fa-sitemap:before {
+  content: "\f0e8";
 }
 
 /*!
