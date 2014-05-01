@@ -72,7 +72,8 @@ module.exports = (grunt) ->
             dist:
                 options:
                     media: ["print"]
-                    ignore: [/#map[a-z\.]*/, ".infoWindow", /timetable[a-z\. ]*/, /fc[a-z\. ]*/, /btn[a-z\-\. :]*/]
+                    ignore: [/map/, ".infoWindow", /timetable/, /fc/, /btn/,
+                            /navbar\-collapse/, /collapse/, /collapsing/]
                 files:
                   "css/main.dist.css": ["index.full.html"]
 
