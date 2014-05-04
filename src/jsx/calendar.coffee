@@ -35,14 +35,13 @@ Calendar = React.createClass
 
     componentDidMount: (root) ->
         $(".btn", root).button()
-        savedView = localStorage.getItem("ic-dance-view")
-        defaultView = savedView || "month"
+        defaultView = localStorage.getItem("ic-dance-view") || "month"
         narrow = window.innerWidth < 450
-        if not savedView and narrow
+        viewName = defaultView
+        if narrow
             defaultView = "agendaDay"
 
         calRef = $(@refs.cal.getDOMNode())
-        viewName = defaultView
         calRef.fullCalendar
             firstDay: 1
             weekMode: "liqiud"
