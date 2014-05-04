@@ -147,4 +147,5 @@ module.exports = (grunt) ->
     grunt.registerTask "js", ["coffeelint", "coffee", "react", "browserify:dist", "uglify"]
     grunt.registerTask "tpl", ["jade", "processhtml", "copy"]
     grunt.registerTask "dist", ["css", "js", "tpl"]
+    grunt.registerTask "minify", ["copy", "uglify", "uncss", "cssmin", "processhtml"]
     grunt.registerTask "default", ["build", "concurrent"]
