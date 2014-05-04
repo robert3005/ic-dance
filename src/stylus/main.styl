@@ -125,7 +125,7 @@ body
     margin 30px 5px 15px
 
 .winners-box
-    margin 73px 0px 0px
+    margin 46px 20px
 
 #faq-items
     margin 0 auto
@@ -212,7 +212,7 @@ footer
     p.lead
         margin-bottom 10px
 
-    p
+    div
         & > a
             line-height 20px
             color lighten(color3, 85%)
@@ -228,12 +228,11 @@ footer
                 vertical-align top
                 margin 0 10px 0 6px
 
+    .btn-group
+        margin-bottom 5px
+
     .btn
         border-color #ffffff
-        margin 0 6px
-
-        &:first-child
-            margin-left 0
 
         &:hover
         &:focus
@@ -266,7 +265,20 @@ footer
     margin 20px
 
 .latin-icon
+    width 320px
+    height 260px
     margin 35px 20px 30px
+
+@media (max-width:450px)
+    .dance-icon
+        float none !important
+        display block
+
+@media (max-width: 450px)
+    .latin-icon
+        // margin 35px 0px 30px
+        width: 260px
+        height: 211px
 
 .separator
     border-top 1px solid #eeeeee
