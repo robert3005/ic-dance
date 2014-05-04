@@ -35,21 +35,44 @@ Calendar = React.createClass
 
     componentDidMount: (root) ->
         $(".btn", root).button()
-        $(@refs.cal.getDOMNode()).fullCalendar
+        defaultView = localStorage.getItem("ic-dance-view") || "month"
+        narrow = window.innerWidth < 450
+        viewName = defaultView
+        if narrow
+            defaultView = "agendaDay"
+
+        calRef = $(@refs.cal.getDOMNode())
+        calRef.fullCalendar
             firstDay: 1
             weekMode: "liqiud"
-            aspectRatio: 1.8
             timeFormat: "h(:mm)A"
             minTime: moment.duration "09:00:00"
             maxTime: moment.duration "24:00:00"
-            defaultView: localStorage.getItem("ic-dance-view") || "month"
+            defaultView: defaultView
+            height: 650
+            windowResize: (v) =>
+                if window.innerWidth < 450
+                    narrow = true
+                    calRef.fullCalendar "changeView", "agendaDay"
+                else
+                    if narrow
+                        narrow = false
+                        calRef.fullCalendar "changeView", viewName
+                    viewName = v.name
+                calRef.fullCalendar "render"
             header:
                 left:   "title"
                 center: ""
                 right:  "today month,agendaWeek prev,next"
             viewRender: (view, el) ->
-                localStorage.setItem "ic-dance-view", view.name
+                saveName = view.name
+                if view.name is "agendaDay"
+                    saveName = "month"
+                localStorage.setItem "ic-dance-view", saveName
 
+        $(window).resize _.debounce =>
+            @forceUpdate()
+        , 500
         @restoreFromStorage()
 
     restoreFromStorage: ->
@@ -84,34 +107,43 @@ Calendar = React.createClass
             , @
             newValues[name] = value
 
-        if this.state[name]
-            changeCalendar "removeEventSource", false
-        else
-            changeCalendar "addEventSource", true
+        eventName = if this.state[name] then "remove" else "add"
+        eventName += "EventSource"
+        setVisible = not this.state[name]
+        changeCalendar eventName, setVisible
 
         @setState newValues, @saveStateStorage
 
     render: ->
         cx = React.addons.classSet
-        calendars = _.reduce this.state, (acc, active, name) ->
+        calendars = _.map this.state, (active, name) ->
             classes =
                 "btn": true
                 "btn-primary": true
                 "active": active
 
             displayName = name.split("_").join(" ")
-            acc.push `<label className={cx(classes)} key={name}
+            return `<label className={cx(classes)} key={name}
                     onClick={_.partial(this.toggleCalendar, name)}>
                 <input type="checkbox" /> {displayName}
             </label>`
-            return acc
-        , [], @
+        , @
+
+        # Too large text for 1 row
+        if window.innerWidth < 550
+            calendars = _.groupBy calendars, (cal, idx) ->
+                return idx < 2
+        else
+            calendars = [calendars]
+
+        buttonGroups = _.map calendars, (cals, idx) ->
+            return `<div className="btn-group btn-group-justified"
+                        data-toggle="buttons" key={idx}>
+                {cals}
+            </div>`
 
         return `<div className="timetable">
-            <div className="btn-group btn-group-justified"
-                    data-toggle="buttons">
-                {calendars}
-            </div>
+            {buttonGroups}
             <div className="calendar" ref="cal" />
         </div>`
 

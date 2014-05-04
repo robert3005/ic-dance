@@ -14,7 +14,7 @@ html.no-js
         link(rel="stylesheet", media="print", href="vendor/css/fullcalendar.print.css")
         link(rel="stylesheet", href="css/main.css")
         // /build
-    body(data-spy="scroll", data-offset="60px", data-target=".navbar-fixed-top")
+    body
         header.navbar.navbar-inverse.navbar-fixed-top.top-navbar(role="banner")
             .container
                 .navbar-header
@@ -159,7 +159,7 @@ html.no-js
                                 The Viennese Waltz is a much faster version of the Modern Waltz, but has the same origins. There are fewer steps to learn and they are especially versatile for covering the floor, but the speed more than enough makes up for the limited steps. The composers Franz Lanner and Johann Strauss from the 1830s are well noted for their beautiful Viennese Waltz pieces.
                     .row.separator
                         .col-md-6.col-lg-6
-                            img.latin-icon.pull-left(src="img/latin.png", width="320px", height="260px")
+                            img.latin-icon.dance-icon.pull-left(src="/img/latin.png")
                             h2 Latin
                             p.
                                 Our classes cover all five dances of international style latin. Beginners start with the well-known cha-cha and jive. We have medal classes from bronze level up to goldstar, technique classes and Beginners Team classes for those interested in dancing competitively in the university circuit at a national level. If you're interested in dancing competitively, please see our Team page.
@@ -191,7 +191,7 @@ html.no-js
                     h1 Casual Ballroom
                     .row
                         .col-md-12.col-lg-12
-                            img.pull-right(src="img/icon_31840.svg", width="250px", height="250px")
+                            img.pull-right.dance-icon(src="img/icon_31840.svg", width="250px", height="250px")
                             p
                                 | "I really want to dance, but I don’t want to do
                                 | competitions" you might think. The Ballroom and
@@ -222,7 +222,7 @@ html.no-js
                     h1 Salsa
                     .row
                         .col-md-12.col-lg-12
-                            img.pull-right(src="img/icon_34370.svg", width="250px", height="250px")
+                            img.pull-right.dance-icon(src="img/icon_34370.svg", width="250px", height="250px")
                             p.
                                 Need a break from studying? You should join our
                                 salsa classes! Whether you are a complete
@@ -254,7 +254,7 @@ html.no-js
                     h1 Competitive Dancing
                     .row
                         .col-md-6.col-lg-6
-                            img.pull-left.trophy(src="img/icon_2477.svg", width="220px", height="220px")
+                            img.pull-left.trophy.dance-icon(src="img/icon_2477.svg", width="220px", height="220px")
                             p.push-down
                               | One of the main activities of IC Dance Club is competitive Ballroom and Latin dancing, also known as Dancesport. For those interested in going to competitions, we run classes at three levels: beginners, novice and intermediate/advanced. For beginners, we have the&nbsp;
                               a(href="#beginnersteam") Beginners Team
@@ -303,50 +303,29 @@ html.no-js
                                 a(href="#faq") FAQ
                                 | &nbsp;section for
                                 | details.
-
                     .row
                         .col-md-6.col-lg-6
-                            h2 Team tryouts
-                            p.
-                                At the beginning of each year tryouts are held to determine partnerships and the dancing level of our dancers. You will be taught a short choreography at the start of the tryout and then asked to dance with various partners.
-                                ALL LEVELS above beginner are encouraged to attend tryouts! This is an opportunity for the coaches to get to know you and to find the best partner for you. It is not a test!
-                                If you have miss tryouts or have joined late you can get in touch with the team captain here for advice/dance arrangements
-                        .col-md-6.col-lg-6
-                            h2 Commitment
-                            p.
-                                You must be able to commit to attending half of the competitions Imperial plans to attend.
-                                If you are unsure about this please contact our team captain here
-                            p.
-                                You must be able to regularly attend practice. This includes technique classes
-                                (which are compulsory for team see below) AND team practices which are aimed
-                                to improve performance and partnership aspects of competitive dancing.
-                            p.
-                                Sometimes unfortunate events happen that mean you are not able to commit to dancing main team for a set of competitions or you cannot find a suitable partner for the season…
-                                This can happen but it is really frustrating when you have to stop dancing because there are no competitive classes available for you without a partner. This is why we have technique classes!
-                                By coming regularly to these practices you can maintain and improve your individual level of dancing (you don’t need a fixed partner for the lessons) and
-                    .row
-                        .col-md-6.col-lg-6
-                            img.winners-box.pull-right(src="img/icon_23506.svg", width="150px", height="150px")
                             h2#competitions Competitions
-                            p.
-
-                              One of the most exciting aspects of being part of IC Dance Team is competing together as a team. During the first part of the year (September - March), the majority of the university competitions throughout the UK take place, and we traditionally attend four of them. This culminates with the Inter-Varsity Dance Competition (IVDC), held in the beginning of March in Blackpool - the biggest and most important university competition of the year.
-                            p.
-
-                              In the second part of the competitive season (March - September), we attend open circuit competitions.  These do not distinguish between students and ex-students as in the university circuit.
-                            p.
-                              University circuit competitions
-                            ul
-                                li Nottingham Varsity Competition (Nottingham, end of November)
-                                li Sheffield Social (Sheffield, beginning of February)
-                                li Southern University Dance Competition (TBC, mid-February)
-                                li Inter Varsity Dance Competition (Blackpool, beginning of March)
-                            p.
-                              Open circuit competitions
-                            ul
-                                li Epsom Trophy Day (Chessington, Sunday 4 May 2014)
-                                li Stars of the Future (Brentwood, Saturday 7 June 2014)
-                                li Bournemouth Summer Festival (Bournemouth, 24-27 July 2014)
+                            .row
+                                .col-md-12.col-lg-12
+                                    img.dance-icon.winners-box.pull-left(src="img/icon_23506.svg", width="200px", height="200px")
+                                    p.
+                                      One of the most exciting aspects of being part of IC Dance Team is competing together as a team. During the first part of the year (September - March), the majority of the university competitions throughout the UK take place, and we traditionally attend four of them. This culminates with the Inter-Varsity Dance Competition (IVDC), held in the beginning of March in Blackpool - the biggest and most important university competition of the year.
+                                    p.
+                                      In the second part of the competitive season (March - September), we attend open circuit competitions.  These do not distinguish between students and ex-students as in the university circuit.
+                                    p.
+                                      University circuit competitions
+                                    ul
+                                        li Nottingham Varsity Competition (Nottingham, end of November)
+                                        li Sheffield Social (Sheffield, beginning of February)
+                                        li Southern University Dance Competition (TBC, mid-February)
+                                        li Inter Varsity Dance Competition (Blackpool, beginning of March)
+                                    p.
+                                      Open circuit competitions
+                                    ul
+                                        li Epsom Trophy Day (Chessington, Sunday 4 May 2014)
+                                        li Stars of the Future (Brentwood, Saturday 7 June 2014)
+                                        li Bournemouth Summer Festival (Bournemouth, 24-27 July 2014)
                     .row
                         .col-md-6.col-lg-6
                             h2#technique Technique practices
@@ -602,22 +581,24 @@ html.no-js
                                 i.fa.fa-envelope
                                 span Mailing list
                         p.lead Check out our facebook groups for more information
-                        p
+                        .btn-group
                             a.btn.btn-default(href="https://www.facebook.com/groups/168466220024235/")
                                 i.fa.fa-facebook
                                 span Club
-                            a.btn.btn-default(href="https://www.facebook.com/groups/380313055382684/")
-                                i.fa.fa-facebook
-                                span Salsa
-                            a.btn.btn-default(href="https://www.facebook.com/groups/1413995095484291/")
-                                i.fa.fa-facebook
-                                span Beginners Team
-                            a.btn.btn-default(href="https://www.facebook.com/groups/588363304553222/")
-                                i.fa.fa-facebook
-                                span Team
                             a.btn.btn-default(href="https://www.facebook.com/groups/icdaa/")
                                 i.fa.fa-facebook
                                 span Alumni
+                        .btn-group
+                            a.btn.btn-default(href="https://www.facebook.com/groups/588363304553222/")
+                                i.fa.fa-facebook
+                                span Team
+                            a.btn.btn-default(href="https://www.facebook.com/groups/1413995095484291/")
+                                i.fa.fa-facebook
+                                span Beginners Team
+                        .btn-group
+                            a.btn.btn-default(href="https://www.facebook.com/groups/380313055382684/")
+                                i.fa.fa-facebook
+                                span Salsa
                     .col-md-6.col-lg-6.location-pic
                         #map.thumbnail
 

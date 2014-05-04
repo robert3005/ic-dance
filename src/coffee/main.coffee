@@ -19,13 +19,23 @@ $ ->
     $(".nav a").on "click", ->
         $(".navbar-toggle").click() if window.innerWidth < 992
 
+    $("body").scrollspy
+        target: ".navbar-fixed-top"
+        offset: 61
+
     $("footer a").tooltip
         placement: "right"
 
-    $("#faq-items").masonry
+    container = document.getElementById "faq-items"
+    msnr = new Masonry container,
         itemSelector: ".item"
         gutter: 10
         isFitWidth: true
+        isInitLayout: false
+    msnr.on "layoutComplete", ->
+        _.defer -> $("body").scrollspy "refresh"
+
+    msnr.layout()
 
     animateScroll = (element) ->
         $window = $ window
