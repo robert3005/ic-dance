@@ -18,7 +18,7 @@
   Calendar = require("./calendar");
 
   $(function() {
-    var animateScroll, locationHash, map, timetable;
+    var animateScroll, container, locationHash, map, msnr, timetable;
     timetable = document.getElementById("timetable-calendar");
     React.renderComponent(Calendar(), timetable);
     map = document.getElementById("map");
@@ -30,14 +30,26 @@
         return $(".navbar-toggle").click();
       }
     });
+    $("body").scrollspy({
+      target: ".navbar-fixed-top",
+      offset: 61
+    });
     $("footer a").tooltip({
       placement: "right"
     });
-    $("#faq-items").masonry({
+    container = document.getElementById("faq-items");
+    msnr = new Masonry(container, {
       itemSelector: ".item",
       gutter: 10,
-      isFitWidth: true
+      isFitWidth: true,
+      isInitLayout: false
     });
+    msnr.on("layoutComplete", function() {
+      return _.defer(function() {
+        return $("body").scrollspy("refresh");
+      });
+    });
+    msnr.layout();
     animateScroll = function(element) {
       var $body, $window, scrollTo;
       $window = $(window);

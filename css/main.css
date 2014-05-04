@@ -30,12 +30,13 @@ body{padding-top:50px}
 .push-down{margin-top:20px}
 .dance-steps{margin:15px auto 0;width:100%}
 .trophy{margin:30px 5px 15px}
-.winners-box{margin:73px 0 0}
+.winners-box{margin:46px 20px}
 #faq-items{margin:0 auto}
 .item{width:350px;padding:10px 20px 20px;margin-bottom:10px;outline:medium none;background:none repeat scroll 0% 0% #fff;border-radius:2px 2px 2px 2px;box-shadow:0 2px 6px rgba(0,0,0,0.3),0 -3px 8px rgba(0,0,0,0.2);text-align:justify;}
 .item p{color:#666}
 .item:hover{box-shadow:0 2px 6px rgba(0,0,0,0.75),0 -3px 8px rgba(0,0,0,0.5)}
-.timetable .btn-group{margin:30px 0 20px}
+@media (max-width: 450px){.item{width:280px}
+}.timetable .btn-group{margin:30px 0 20px}
 .timetable .btn{text-transform:capitalize}
 .timetable .fc-event{color:#000}
 .timetable .fc-event-vert.fc-event-end{border-bottom-left-radius:0;border-bottom-right-radius:0}
@@ -50,12 +51,12 @@ h1{border-bottom:1px solid #eee;padding-bottom:10px;margin:30px 0 20px}
 footer{border-style:solid;border-width:1px 0 0;border-color:#389baf;box-shadow:0 -1px 0 rgba(255,255,255,0.1);background-color:#77c4d3;color:#fff;padding:20px 0 30px;margin-top:50px;}
 footer h1{margin:10px 0 15px;padding-bottom:5px}
 footer p.lead{margin-bottom:10px}
-footer p > a{line-height:20px;color:#ebf6f8;}
-footer p > a:hover,footer p > a:focus{color:#fff}
-footer p > a > i{font-size:20px}
-footer p > a > span{vertical-align:top;margin:0 10px 0 6px}
-footer .btn{border-color:#fff;margin:0 6px;}
-footer .btn:first-child{margin-left:0}
+footer div > a{line-height:20px;color:#ebf6f8;}
+footer div > a:hover,footer div > a:focus{color:#fff}
+footer div > a > i{font-size:20px}
+footer div > a > span{vertical-align:top;margin:0 10px 0 6px}
+footer .btn-group{margin-bottom:5px}
+footer .btn{border-color:#fff;}
 footer .btn:hover,footer .btn:focus,footer .btn:active,footer .btn.active,.open .dropdown-togglefooter .btn{border-color:#fff}
 footer .location-pic{text-align:center;margin-top:10px}
 footer .media i{font-size:38px}
@@ -63,8 +64,10 @@ footer .media i{font-size:38px}
 #map > div{width:100%;height:100%}
 .infoWindow{color:#000;text-align:left}
 .ballroom-icon{margin:20px}
-.latin-icon{margin:35px 20px 30px}
-.separator{border-top:1px solid #eee;margin-top:20px}
+.latin-icon{width:320px;height:260px;margin:35px 20px 30px}
+@media (max-width:450px){.dance-icon{float:none !important;display:block}
+}@media (max-width: 450px){.latin-icon{width:260px;height:211px}
+}.separator{border-top:1px solid #eee;margin-top:20px}
 @media (max-width: 450px){.picture h1{font-size:90px}
 .picture h2{font-size:40px;}
 .picture h2:before,.picture h2:after{display:none}

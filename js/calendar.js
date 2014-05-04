@@ -50,24 +50,54 @@ Calendar = React.createClass({displayName: 'Calendar',
     })());
   },
   componentDidMount: function(root) {
+    var calRef, defaultView, narrow, viewName,
+      _this = this;
     $(".btn", root).button();
-    $(this.refs.cal.getDOMNode()).fullCalendar({
+    defaultView = localStorage.getItem("ic-dance-view") || "month";
+    narrow = window.innerWidth < 450;
+    viewName = defaultView;
+    if (narrow) {
+      defaultView = "agendaDay";
+    }
+    calRef = $(this.refs.cal.getDOMNode());
+    calRef.fullCalendar({
       firstDay: 1,
       weekMode: "liqiud",
-      aspectRatio: 1.8,
       timeFormat: "h(:mm)A",
       minTime: moment.duration("09:00:00"),
       maxTime: moment.duration("24:00:00"),
-      defaultView: localStorage.getItem("ic-dance-view") || "month",
+      defaultView: defaultView,
+      height: 650,
+      windowResize: function(v) {
+        if (window.innerWidth < 450) {
+          narrow = true;
+          calRef.fullCalendar("changeView", "agendaDay");
+        } else {
+          if (narrow) {
+            narrow = false;
+            calRef.fullCalendar("changeView", viewName);
+          }
+          viewName = v.name;
+        }
+        return calRef.fullCalendar("render");
+      },
       header: {
         left: "title",
         center: "",
         right: "today month,agendaWeek prev,next"
       },
       viewRender: function(view, el) {
-        return localStorage.setItem("ic-dance-view", view.name);
+        var saveName;
+        saveName = view.name;
+        if (view.name === "agendaDay") {
+          saveName = "month";
+        }
+        return localStorage.setItem("ic-dance-view", saveName);
       }
     });
+    $(window).resize(_.debounce(function() {
+      return _this.forceUpdate();
+    }, 500));
     return this.restoreFromStorage();
   },
   restoreFromStorage: function() {
@@ -89,7 +119,7 @@ Calendar = React.createClass({displayName: 'Calendar',
     return localStorage.setItem("ic-dance-calendars", JSON.stringify(this.state));
   },
   toggleCalendar: function(name) {
-    var changeCalendar, newValues,
+    var changeCalendar, eventName, newValues, setVisible,
       _this = this;
     newValues = {};
     changeCalendar = function(evName, value) {
@@ -108,17 +138,16 @@ Calendar = React.createClass({displayName: 'Calendar',
       }, _this);
       return newValues[name] = value;
     };
-    if (this.state[name]) {
-      changeCalendar("removeEventSource", false);
-    } else {
-      changeCalendar("addEventSource", true);
-    }
+    eventName = this.state[name] ? "remove" : "add";
+    eventName += "EventSource";
+    setVisible = !this.state[name];
+    changeCalendar(eventName, setVisible);
     return this.setState(newValues, this.saveStateStorage);
   },
   render: function() {
-    var calendars, cx;
+    var buttonGroups, calendars, cx;
     cx = React.addons.classSet;
-    calendars = _.reduce(this.state, function(acc, active, name) {
+    calendars = _.map(this.state, function(active, name) {
       var classes, displayName;
       classes = {
         "btn": true,
@@ -126,17 +155,26 @@ Calendar = React.createClass({displayName: 'Calendar',
         "active": active
       };
       displayName = name.split("_").join(" ");
-      acc.push(React.DOM.label( {className:cx(classes), key:name,
+      return React.DOM.label( {className:cx(classes), key:name,
                     onClick:_.partial(this.toggleCalendar, name)}, 
                 React.DOM.input( {type:"checkbox"} ), " ", displayName
-            ));
-      return acc;
-    }, [], this);
+            );
+    }, this);
+    if (window.innerWidth < 550) {
+      calendars = _.groupBy(calendars, function(cal, idx) {
+        return idx < 2;
+      });
+    } else {
+      calendars = [calendars];
+    }
+    buttonGroups = _.map(calendars, function(cals, idx) {
+      return React.DOM.div( {className:"btn-group btn-group-justified",
+                        'data-toggle':"buttons", key:idx}, 
+                cals
+            );
+    });
     return React.DOM.div( {className:"timetable"}, 
-            React.DOM.div( {className:"btn-group btn-group-justified",
-                    'data-toggle':"buttons"}, 
-                calendars
-            ),
+            buttonGroups,
             React.DOM.div( {className:"calendar", ref:"cal"} )
         );
   }

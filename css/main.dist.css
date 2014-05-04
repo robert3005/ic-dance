@@ -1763,6 +1763,13 @@ html .fc,
   text-align: right;
 }
 
+@media (max-width: 560px) {
+  .fc-header-right,
+  .fc-header-center {
+    text-align: left;
+  }
+}
+
 .fc-header-title {
   display: inline-block;
   vertical-align: top;
@@ -2585,7 +2592,7 @@ body {
 }
 
 .winners-box {
-  margin: 73px 0 0;
+  margin: 46px 20px;
 }
 
 #faq-items {
@@ -2609,6 +2616,12 @@ body {
 
 .item:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.75),0 -3px 8px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 450px) {
+  .item {
+    width: 280px;
+  }
 }
 
 .timetable .btn-group {
@@ -2691,32 +2704,31 @@ footer p.lead {
   margin-bottom: 10px;
 }
 
-footer p > a {
+footer div > a {
   line-height: 20px;
   color: #ebf6f8;
 }
 
-footer p > a:hover,
-footer p > a:focus {
+footer div > a:hover,
+footer div > a:focus {
   color: #fff;
 }
 
-footer p > a > i {
+footer div > a > i {
   font-size: 20px;
 }
 
-footer p > a > span {
+footer div > a > span {
   vertical-align: top;
   margin: 0 10px 0 6px;
 }
 
-footer .btn {
-  border-color: #fff;
-  margin: 0 6px;
+footer .btn-group {
+  margin-bottom: 5px;
 }
 
-footer .btn:first-child {
-  margin-left: 0;
+footer .btn {
+  border-color: #fff;
 }
 
 footer .btn:hover,
@@ -2756,7 +2768,23 @@ footer .media i {
 }
 
 .latin-icon {
+  width: 320px;
+  height: 260px;
   margin: 35px 20px 30px;
+}
+
+@media (max-width:450px) {
+  .dance-icon {
+    float: none !important;
+    display: block;
+  }
+}
+
+@media (max-width: 450px) {
+  .latin-icon {
+    width: 260px;
+    height: 211px;
+  }
 }
 
 .separator {
