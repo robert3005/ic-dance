@@ -33,7 +33,6 @@ $ ->
         isFitWidth: true
         isInitLayout: false
     msnr.on "layoutComplete", ->
-        console.log "layout"
         _.defer -> $("body").scrollspy "refresh"
 
     msnr.layout()
