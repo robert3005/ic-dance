@@ -73,7 +73,8 @@ module.exports = (grunt) ->
                 options:
                     media: ["print"]
                     ignore: [/map/, ".infoWindow", /timetable/, /fc/, /btn/,
-                            /navbar\-collapse/, /collapse/, /collapsing/]
+                            /navbar\-collapse/, /collapse/, /collapsing/, /navbar-nav/,
+                            /dropdown/]
                 files:
                   "css/main.dist.css": ["index.full.html"]
 
