@@ -11,6 +11,9 @@ body
     border-color darken(color2, 30%)
     box-shadow 0 1px 0 rgba(255,255,255,.1)
 
+    .caret
+        margin-left 5px
+
     .navbar-collapse
         border-color darken(color2, 30%)
 
@@ -44,6 +47,13 @@ body
                     color #ffffff
     .navbar-brand
         color #ffffff
+
+    .dropdown-menu
+        & > .active
+            & > a
+            & > a:hover
+            & > a:focus
+                background-color darken(color2, 30%)
 
 .icons
     text-align center
@@ -213,6 +223,7 @@ footer
         margin-bottom 10px
 
     div
+    p
         & > a
             line-height 20px
             color lighten(color3, 85%)
