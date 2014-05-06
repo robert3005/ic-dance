@@ -2800,6 +2800,10 @@ body {
   padding-top: 50px;
 }
 
+.navbar-inverse .navbar-collapse.in .open .dropdown-menu > li:not(.active) > a {
+  color: #cecece !important;
+}
+
 .navbar {
   text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
   background-color: #333745;
@@ -2849,10 +2853,6 @@ body {
 
 .navbar .navbar-brand {
   color: #fff;
-}
-
-.navbar .navbar-nav .open .dropdown-menu > li > a {
-  color: #cecece;
 }
 
 .navbar .dropdown-menu > li > a {
