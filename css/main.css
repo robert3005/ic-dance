@@ -53,7 +53,7 @@ body{padding-top:50px}
 .timetable .salsa{background-color:#fad165 !important;border-color:#f8bd21 !important}
 h1{border-bottom:1px solid #eee;padding-bottom:10px;margin:30px 0 20px}
 footer{border-style:solid;border-width:1px 0 0;border-color:#389baf;box-shadow:0 -1px 0 rgba(255,255,255,0.1);background-color:#77c4d3;color:#fff;padding:20px 0 30px;margin-top:50px;position:relative;}
-footer .details:before{opacity:.4;transform:rotate(30deg);content:"";position:absolute;margin-top:-64px;right:10px;top:55%;width:280px;height:128px;background:url("/img/union_logo.png") no-repeat 0 0;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+footer .details:before{opacity:.4;transform:rotate(30deg);content:"";position:absolute;margin-top:-64px;right:10px;top:55%;width:280px;height:128px;background:url("../img/union_logo.png") no-repeat 0 0;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
 footer h1{margin:10px 0 15px;padding-bottom:5px}
 footer p.lead{margin-bottom:10px}
 footer div > a,footer p > a{line-height:20px;color:#ebf6f8;}
