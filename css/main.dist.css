@@ -2850,10 +2850,27 @@ body {
   color: #fff;
 }
 
+.navbar .navbar-nav .open .dropdown-menu > li > a {
+  color: #cecece;
+}
+
+.navbar .dropdown-menu > li > a {
+  padding: 3px 22.5px;
+}
+
+.navbar .navbar-nav > .open > a,
+.navbar .dropdown-menu > a,
+.navbar .navbar-nav > .open > .active > a,
 .navbar .dropdown-menu > .active > a,
+.navbar .navbar-nav > .open > a:hover,
+.navbar .dropdown-menu > a:hover,
+.navbar .navbar-nav > .open > .active > a:hover,
 .navbar .dropdown-menu > .active > a:hover,
+.navbar .navbar-nav > .open > a:focus,
+.navbar .dropdown-menu > a:focus,
+.navbar .navbar-nav > .open > .active > a:focus,
 .navbar .dropdown-menu > .active > a:focus {
-  background-color: #242630;
+  background-color: #242630 !important;
 }
 
 .icons {
@@ -3047,6 +3064,24 @@ footer {
   color: #fff;
   padding: 20px 0 30px;
   margin-top: 50px;
+  position: relative;
+}
+
+footer .details:before {
+  opacity: .4;
+  transform: rotate(30deg);
+  content: "";
+  position: absolute;
+  margin-top: -64px;
+  right: 10px;
+  top: 55%;
+  width: 280px;
+  height: 128px;
+  background: url("/img/union_logo.png") no-repeat 0 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 footer h1 {
@@ -3105,6 +3140,12 @@ footer .location-pic {
 
 footer .media i {
   font-size: 38px;
+}
+
+@media (max-width: 549px) {
+  .details:before {
+    display: none;
+  }
 }
 
 #map {

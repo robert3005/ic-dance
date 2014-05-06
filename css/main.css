@@ -20,7 +20,9 @@ body{padding-top:50px}
 .navbar .navbar-nav > li > a{color:#dddfe6;}
 .navbar .navbar-nav > li > a:hover{color:#fff}
 .navbar .navbar-brand{color:#fff}
-.navbar .dropdown-menu > .active > a,.navbar .dropdown-menu > .active > a:hover,.navbar .dropdown-menu > .active > a:focus{background-color:#242630}
+.navbar .navbar-nav .open .dropdown-menu > li > a{color:#cecece}
+.navbar .dropdown-menu > li > a{padding:3px 22.5px}
+.navbar .navbar-nav > .open > a,.navbar .dropdown-menu > a,.navbar .navbar-nav > .open > .active > a,.navbar .dropdown-menu > .active > a,.navbar .navbar-nav > .open > a:hover,.navbar .dropdown-menu > a:hover,.navbar .navbar-nav > .open > .active > a:hover,.navbar .dropdown-menu > .active > a:hover,.navbar .navbar-nav > .open > a:focus,.navbar .dropdown-menu > a:focus,.navbar .navbar-nav > .open > .active > a:focus,.navbar .dropdown-menu > .active > a:focus{background-color:#242630 !important}
 .icons{text-align:center;background-color:#77c4d3;padding:40px 0}
 .picture{background:url("../img/banner.jpg") no-repeat center center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;text-align:center;padding:60px 15px 150px;position:relative;box-shadow:inset 0 0 120px rgba(0,0,0,0.9),inset 0 0 80px rgba(0,0,0,0.83);}
 .picture .container{position:relative;z-index:15}
@@ -50,7 +52,8 @@ body{padding-top:50px}
 .timetable .casual_ballroom{background-color:#16a765 !important;border-color:#128651 !important;color:#fff !important}
 .timetable .salsa{background-color:#fad165 !important;border-color:#f8bd21 !important}
 h1{border-bottom:1px solid #eee;padding-bottom:10px;margin:30px 0 20px}
-footer{border-style:solid;border-width:1px 0 0;border-color:#389baf;box-shadow:0 -1px 0 rgba(255,255,255,0.1);background-color:#77c4d3;color:#fff;padding:20px 0 30px;margin-top:50px;}
+footer{border-style:solid;border-width:1px 0 0;border-color:#389baf;box-shadow:0 -1px 0 rgba(255,255,255,0.1);background-color:#77c4d3;color:#fff;padding:20px 0 30px;margin-top:50px;position:relative;}
+footer .details:before{opacity:.4;transform:rotate(30deg);content:"";position:absolute;margin-top:-64px;right:10px;top:55%;width:280px;height:128px;background:url("/img/union_logo.png") no-repeat 0 0;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
 footer h1{margin:10px 0 15px;padding-bottom:5px}
 footer p.lead{margin-bottom:10px}
 footer div > a,footer p > a{line-height:20px;color:#ebf6f8;}
@@ -62,7 +65,8 @@ footer .btn{border-color:#fff;}
 footer .btn:hover,footer .btn:focus,footer .btn:active,footer .btn.active,.open .dropdown-togglefooter .btn{border-color:#fff}
 footer .location-pic{text-align:center;margin-top:10px}
 footer .media i{font-size:38px}
-#map{width:100%;height:518px;}
+@media (max-width: 549px){.details:before{display:none}
+}#map{width:100%;height:518px;}
 #map > div{width:100%;height:100%}
 .infoWindow{color:#000;text-align:left}
 .ballroom-icon{margin:20px}

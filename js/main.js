@@ -25,7 +25,7 @@
     google.maps.event.addDomListener(window, "load", function() {
       return React.renderComponent(Map(), map);
     });
-    $(".nav a").on("click", function() {
+    $(".nav a:not([href='#'])").on("click", function() {
       if (window.innerWidth < 992) {
         return $(".navbar-toggle").click();
       }
@@ -63,7 +63,7 @@
         });
       }
     };
-    $("a[href^=#]").click(function(ev) {
+    $("a[href^=#]:not([href='#'])").click(function(ev) {
       var hrefAnchor;
       ev.preventDefault();
       hrefAnchor = $(this).attr("href");
