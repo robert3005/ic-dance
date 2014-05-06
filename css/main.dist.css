@@ -2881,7 +2881,7 @@ body {
 }
 
 .picture {
-  background: url("/img/banner.jpg") no-repeat center center;
+  background: url("../img/banner.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2929,7 +2929,7 @@ body {
 
 .picture h2:before {
   content: "";
-  background-image: url("/img/title-deco-left.png");
+  background-image: url("../img/title-deco-left.png");
   background-repeat: no-repeat;
   width: 150px;
   height: 54px;
@@ -2944,7 +2944,7 @@ body {
 
 .picture h2:after {
   content: "";
-  background-image: url("/img/title-deco-right.png");
+  background-image: url("../img/title-deco-right.png");
   background-repeat: no-repeat;
   width: 150px;
   height: 54px;
@@ -3096,7 +3096,7 @@ footer .details:before {
   top: 55%;
   width: 280px;
   height: 128px;
-  background: url("/img/union_logo.png") no-repeat 0 0;
+  background: url("../img/union_logo.png") no-repeat 0 0;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
