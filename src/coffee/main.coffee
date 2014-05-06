@@ -16,7 +16,7 @@ $ ->
     google.maps.event.addDomListener window, "load", ->
         React.renderComponent Map(), map
 
-    $(".nav a").on "click", ->
+    $(".nav a:not([href='#'])").on "click", ->
         $(".navbar-toggle").click() if window.innerWidth < 992
 
     $("body").scrollspy
@@ -49,7 +49,7 @@ $ ->
             $body.animate scrollTop: scrollTo
 
 
-    $("a[href^=#]"). click (ev) ->
+    $("a[href^=#]:not([href='#'])"). click (ev) ->
         ev.preventDefault()
         hrefAnchor = $(this).attr "href"
         history.pushState {}, hrefAnchor, hrefAnchor

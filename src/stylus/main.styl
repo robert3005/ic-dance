@@ -48,12 +48,23 @@ body
     .navbar-brand
         color #ffffff
 
+    .navbar-nav .open .dropdown-menu > li > a
+        color #CECECE
+
+    .dropdown-menu > li > a
+        padding 3px 22.5px
+
+    .navbar-nav > .open
     .dropdown-menu
+        &
         & > .active
             & > a
             & > a:hover
             & > a:focus
-                background-color darken(color2, 30%)
+                background-color darken(color2, 30%) !important
+
+
+
 
 .icons
     text-align center
