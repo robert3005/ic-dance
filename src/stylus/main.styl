@@ -48,12 +48,20 @@ body
     .navbar-brand
         color #ffffff
 
+    .navbar-nav .open .dropdown-menu > li > a
+        color #CECECE
+
+    .dropdown-menu > li > a
+        padding 3px 22.5px
+
+    .navbar-nav > .open
     .dropdown-menu
+        &
         & > .active
             & > a
             & > a:hover
             & > a:focus
-                background-color darken(color2, 30%)
+                background-color darken(color2, 30%) !important
 
 .icons
     text-align center
@@ -214,6 +222,23 @@ footer
     color #ffffff
     padding 20px 0 30px
     margin-top 50px
+    position relative
+
+    .details:before
+        opacity 0.4
+        transform rotate(30deg)
+        content ""
+        position absolute
+        margin-top -64px
+        right 10px
+        top 55%
+        width 280px
+        height 128px
+        background url("/img/union_logo.png") no-repeat 0 0
+        -webkit-background-size cover
+        -moz-background-size cover
+        -o-background-size cover
+        background-size cover
 
     h1
         margin 10px 0 15px
@@ -259,6 +284,10 @@ footer
     .media
         i
             font-size 38px
+
+@media (max-width: 549px)
+    .details:before
+        display none
 
 #map
     width 100%
