@@ -7,6 +7,9 @@ _ = require "lodash"
 Map = require "./map"
 Calendar = require "./calendar"
 
+if !Array.isArray
+    Array.isArray = (arg) ->
+        Object.prototype.toString.call(arg) is '[object Array]'
 
 $ ->
     timetable = document.getElementById "timetable-calendar"
