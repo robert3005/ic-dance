@@ -206,6 +206,12 @@ module.exports = Calendar;
 
   Calendar = require("./calendar");
 
+  if (!Array.isArray) {
+    Array.isArray = function(arg) {
+      return Object.prototype.toString.call(arg) === '[object Array]';
+    };
+  }
+
   $(function() {
     var animateScroll, container, locationHash, map, msnr, timetable;
     timetable = document.getElementById("timetable-calendar");
